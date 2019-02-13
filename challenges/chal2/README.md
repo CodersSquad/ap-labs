@@ -23,7 +23,7 @@ git clone https://github.com/CodersSquad/ap-labs.git
 
 3. Once you're done, run the following command:
 ```
-git diff > <github_user>-first-term-exam.path
+git diff > <github_user>-first-term-exam.patch
 
 # Example:
 git diff > obedmr-first-term-exam.patch
