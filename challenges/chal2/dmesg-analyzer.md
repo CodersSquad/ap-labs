@@ -70,11 +70,3 @@ The program will be tested with the following cases:
 ```
 ./dmesg-analyzer.o dmesg.txt
 ```
-2. `/var/log/auth.log`
-```
-./dmesg-analyzer.o /var/log/auth.log
-```
-3. `/var/log/syslog`
-```
-./dmesg-analyzer.o /var/log/syslog
-```
