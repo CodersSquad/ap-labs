@@ -7,7 +7,6 @@ Requirements
 - The program must be implemented in Golang programming language.
 - Given one path, the program must count the following file's types:
   - Directories
-  - Permission Denied files
   - Symbolic Links
   - Others
 - Use the provided template `dir-scan.go`
