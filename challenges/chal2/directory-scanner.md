@@ -1,7 +1,6 @@
 Directory Scanner
 =================
 Implement a directory scanner tool for any given path. It's highly recommended to implement it for a UNIX-based machine.
-This challenge requires a proper error handling in order to avoid program's crashes due `permission denied` errors.
 
 Requirements
 ------------
@@ -32,7 +31,6 @@ Directory Scanner Tool
 | Path                    | /tmp |
 +-------------------------+------+
 | Directories             | 10   |
-| Permission denied files | 145  |
 | Symbolic Links          | 5    |
 | Other files             | 50   |
 +-------------------------+------+
