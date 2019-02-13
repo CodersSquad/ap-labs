@@ -31,6 +31,7 @@ git diff > obedmr-first-term-exam.patch
 
 4. Send your `<github_user>-first-term-exam.path` file to `obed.n.munoz@tec.mx`
 
+5. Finally, upload your work to your `ap-labs` repository.
 
 Grading Policy
 --------------
