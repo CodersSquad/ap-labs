@@ -11,6 +11,12 @@ $ TZ=Europe/London ./clock2 -port 8030 &
 
 # Starting clockWall client
 $ clockWall NewYork=localhost:8010 Tokyo=localhost:8020 London=localhost:8030
+NewYork : 12:00:00
+London  : 17:00:00
+Tokyo   : 02:00:00
+.
+.
+.
 ```
 
 General Requirements and Considerations
