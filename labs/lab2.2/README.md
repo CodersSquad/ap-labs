@@ -48,7 +48,7 @@ Expected  output:
 curl -k -X POST -d "commit=$(git rev-parse --short master)" https://classify-232805.appspot.com/labs/obedmr/lab2.2
 ```
 
-Expected output:
+Expected sample output:
 ```
 {"commit":"755667f","dueDate":"Tue Mar 12 23:59:00 2019","labID":"lab2.2","message":"Submission Accepted","submissionDate":"Mon Mar  4 21:45:29 2019","user":"obedmr"}
 ```
@@ -59,7 +59,7 @@ Expected output:
 curl -k https://classify-232805.appspot.com/labs/obedmr/lab2.2
 ```
 
-Expected output:
+Expected sample output:
 ```
 {"message":"Lab's submission data was successfully retrieved","submission":{"ID":"obedmr.lab2.2","LabID":"lab2.2","CommitID":"755667f","Date":"2019-03-05T03:45:29.500133921Z"},"user":"obedmr"}
 ```
