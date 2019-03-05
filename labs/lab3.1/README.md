@@ -9,8 +9,9 @@ When a new subdirectory is added under the tree or a directory is deleted, the s
 General Requirements and Considerations
 ---------------------------------------
 - Use the logger that was done on [lab2.4](https://github.com/CodersSquad/ap-labs/tree/master/labs/lab2.4).
+- Use the `inotify` [API](http://man7.org/linux/man-pages/man7/inotify.7.html).
 - Use the `monitor.c` file for implementing the lab's general flow.
-- Use the `Makefile` compilation automation.
+- Use the `Makefile` for compilation.
 - Update `README.md` with the proper steps for building and running your code.
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
