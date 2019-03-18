@@ -22,34 +22,78 @@ Submission Details
 
 **NOTE:** I'm using my user `obedmr` for show casing purposes. Your real submission should use your github user account in lower case.
 
-## Check Classify API
+## Get your Classify API ID
 ```
-curl -k https://classify-232805.appspot.com/users/obedmr
+curl -k https://classify-234103.appspot.com/users/\?githubID\=obedmr
 ```
 Expected sample output:
 ```
-{"message":"Welcome obedmr","user":"obedmr"}
+{
+    "message": "List of Users",
+    "users": [
+        {
+            "GithubID": "obedmr",
+            "ID": "ca83e551-5529-4fc0-971c-161f4f36516a",
+            "Name": ""
+        }
+    ]
+}
 ```
 
+## Get lab ID
+```
+curl https://classify-234103.appspot.com/labs/\?shortName\=lab3.2
+```
+Expected sample output:
+```
+{
+    "labs": [
+        {
+            "Description": "",
+            "DueDate": "2019-03-27T05:59:39.848Z",
+            "ID": "2fb40f0d-62ea-4b71-88b1-eee6ca18d60d",
+            "Name": "Progress Notifier with Signals",
+            "ShortName": "lab3.2"
+        }
+    ],
+    "message": "List of Labs"
+}
+```
 
 ## Submit your lab
 **Note:** Before submitting, make sure you do the common `git add`, `git commit` and `git push` for the new code changes in your `ap-labs` repository.
 ```
-curl -k -X POST -d "commit=$(git rev-parse --short master)" https://classify-232805.appspot.com/labs/obedmr/lab3.1
+curl -k -X POST -d "commit=$(git rev-parse --short master)" https://classify-234103.appspot.com/labs/ca83e551-5529-4fc0-971c-161f4f36516a/2fb40f0d-62ea-4b71-88b1-eee6ca18d60c
 ```
 
 Expected sample output:
 ```
-{"commit":"755667f","dueDate":"Tue Mar 12 23:59:00 2019","labID":"lab3.1","message":"Submission Accepted","submissionDate":"Mon Mar  4 21:45:29 2019","user":"obedmr"}
+{
+    "commit": "7f961e9",
+    "labID": "2fb40f0d-62ea-4b71-88b1-eee6ca18d60c",
+    "message": "Submission Accepted",
+    "submissionDate": "Sun Mar 17 22:56:34 2019",
+    "userID": "ca83e551-5529-4fc0-971c-161f4f36516a"
+}
 ```
 
 
 ## Check your Lab's submission
 ```
-curl -k https://classify-232805.appspot.com/labs/obedmr/lab3.1
+curl -k https://classify-234103.appspot.com/labs/ca83e551-5529-4fc0-971c-161f4f36516a/2fb40f0d-62ea-4b71-88b1-eee6ca18d60c
 ```
 
 Expected sample output:
 ```
-{"message":"Lab's submission data was successfully retrieved","submission":{"ID":"obedmr.lab3.1","LabID":"lab3.1","CommitID":"755667f","Date":"2019-03-05T03:45:29.500133921Z"},"user":"obedmr"}
+{
+    "message": "Lab's submission data was successfully retrieved",
+    "submission": {
+        "CommitID": "7f961e9",
+        "Date": "2019-03-18T04:56:34.523448Z",
+        "ID": "61d04682-d130-4258-8141-5bc9a6e7b49c",
+        "LabID": "2fb40f0d-62ea-4b71-88b1-eee6ca18d60c",
+        "UserID": "ca83e551-5529-4fc0-971c-161f4f36516a"
+    },
+    "user": "ca83e551-5529-4fc0-971c-161f4f36516a"
+}
 ```
