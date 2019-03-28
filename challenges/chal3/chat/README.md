@@ -9,7 +9,7 @@ Requirements
 - The program must be implemented in Golang programming language.
 - Use the provided base source code from `server.go` and `client.go` files.
 - Add support for usernames. Instead of identifying users by their `ip:port`, they will be identified with their usernames.
-- Add support for IRC sub-commands in the `client.go`
+- Add support for the following IRC sub-commands
 
 | Sub-command         | description                                             |
 |---------------------|---------------------------------------------------------|
