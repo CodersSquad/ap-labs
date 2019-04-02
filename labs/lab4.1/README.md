@@ -30,3 +30,5 @@ General Requirements and Considerations
 
 Submission Details
 ==================
+
+Read [Classify API](../../classify.md)
