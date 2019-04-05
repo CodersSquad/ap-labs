@@ -47,7 +47,8 @@ Some key required global variables
 Matrix multiplication
 ---------------------
 
-- You will have a loop that is creating NxN (2000*2000) concurrent threads for calculating the `row*col` operations between `matA` and `matB`.
+- You will have a loop that is creating NxN (2000*2000) threads in lots of 1000 concurrent processes for calculating the `row*col` operations between `matA` and `matB`.
+- The idea of having 1000 concurrent processes is to play with the synchronization of the "limited" memory you have with the defined number of buffers (`NUM_BUFFERS`).
 - Each thread will execute `row*col` operation and will use available buffers for storing the result of the dot product.
 `getLock` function will be required to get a buffer to have a place where to store the dot product result, if there's no available buffer, thread will need to wait.
 `releaseLock` will be used to release a buffer to be used by another thread.
