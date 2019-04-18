@@ -35,9 +35,9 @@ Some key required global variables
 ----------------------------------
 
 - `NUM_BUFFERS`
-  Number of temporal buffers for dot product operations
+  Number of temporal buffers for vectors that will be used for each dot product.
 - `long **buffers`
-  An array of `NUM_BUFFERS` pointers to the available buffers that will serve as temporal rows to be stored into final result matrix.
+  An array of `NUM_BUFFERS` pointers to the available buffers that will serve as temporal vectors for dot product operations.
 - `pthread_mutex_t *mutexes`
   Mutexes that will help to know which buffer is available
 - `long * result`
@@ -47,12 +47,13 @@ Some key required global variables
 Matrix multiplication
 ---------------------
 
-- You will have a loop that is creating NxN (2000*2000) threads in lots of 1000 concurrent processes for calculating the `row*col` operations between `matA` and `matB`.
-- The idea of having 1000 concurrent processes is to play with the synchronization of the "limited" memory you have with the defined number of buffers (`NUM_BUFFERS`).
-- Each thread will execute `row*col` operation and will use available buffers for storing the result of the dot product.
-`getLock` function will be required to get a buffer to have a place where to store the dot product result, if there's no available buffer, thread will need to wait.
+- You will have a loop that is creating NxN (2000*2000) threads in lots of 2000 concurrent processes for calculating the `row*col` operations between `matA` and `matB`.
+- The idea of having 2000 concurrent processes is to play with the synchronization of the "limited" memory you have with the defined number of buffers (`NUM_BUFFERS`).
+- Each thread will execute `row*col` operation and will use available 2 buffers for temporaly storing the 2 arrays that are required for calculating the dot product.
+`getLock` function will be required to get a buffer for storing a vector, if there's no available buffer, thread will need to wait.
 `releaseLock` will be used to release a buffer to be used by another thread.
 - At the end, you'll wait for all processes to join the main execution.
+- Each lot of 2000 threads goal will represent a row in the final matrices multiplication result.
 - Finally, save your result by calling the `saveResultMatrix` function.
 
 
