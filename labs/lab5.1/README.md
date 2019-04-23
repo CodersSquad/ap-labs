@@ -5,13 +5,13 @@ This is a single lab for multiple OpenMP exercises that we'll be doing in class.
 will considered for the lab's grading. The goal of each exercise is to convert its default serial implementation to
 a parallel implementation with OpenMP.
 
-| Exercise Name          | Serial Implementation | Parallel Implementation |
-|------------------------|-----------------------|-------------------------|
-| Hello World            | `hello.c`             | `hello_par.c`           |
-| Integral PI Compute    | `pi.c`                | `pi_par.c`              |
-| Monte Carlo PI Compute | `pi_mc.c`             | `pi_mc_par.c`           |
-| Matrix Multiplication  | `matmul.c`            | `matmul_par.c`          |
-| Producer/Consumer      | `prod_cons.c`         | `prod_cons_par.c`       |
+| Exercise Name          | Serial Implementation | Parallel Implementation                            |
+|------------------------|-----------------------|----------------------------------------------------|
+| Hello World            | `hello.c`             | `hello_par.c`                                      |
+| Integral PI Compute    | `pi.c`                | `pi_spmd_simple.c`, `pi_spmd_final.c`, `pi_loop.c` |
+| Monte Carlo PI Compute | `pi_mc.c`             | `pi_mc_par.c`                                      |
+| Matrix Multiplication  | `matmul.c`            | `matmul_par.c`                                     |
+| Producer/Consumer      | `prod_cons.c`         | `prod_cons_par.c`                                  |
 
 
 
