@@ -13,7 +13,7 @@ Technical Requirements
 - The shooter must be controlled by the user.
 - Space Invaders are autonomous entities that will move and shoot in a random way.
 - Space Invaders and shooter should respect the layout limits.
-- Space Invaders number can be configurable on game's start.
+- Space Invaders number can be configured on game's start.
 - Each invader's behaviour will be implemented as a separated thread.
 - Space Invaders and main shooter threads must use the same map or game layout data structure resource.
 - Display obtained shooter's scores.

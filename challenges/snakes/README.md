@@ -15,7 +15,7 @@ Technical Requirements
 - The main `snake` gamer must be controlled by the user.
 - Enemy snakes are autonomous entities that will move a random way.
 - Enemy snakes and main snake should respect the layout limits and walls.
-- Enemy snakes number can be configurable on game's start.
+- Enemy snakes number can be configured on game's start.
 - Each enemy's behaviour will be implemented as a separated thread.
 - Enemy snakes and main sneak threads must use the same map or game layout data structure resource.
 - Display obtained main snake's scores.

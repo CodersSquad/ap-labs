@@ -13,7 +13,7 @@ Technical Requirements
 - The `pacman` gamer must be controlled by the user.
 - Enemies are autonomous entities that will move a random way.
 - Enemies and pacman should respect the layout limits and walls.
-- Enemies number can be configurable on game's start.
+- Enemies number can be configured on game's start.
 - Each enemy's behaviour will be implemented as a separated thread.
 - Enemies and pacman threads must use the same map or game layout data structure resource.
 - Display obtained pacman's scores.
