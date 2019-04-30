@@ -1,24 +1,28 @@
-Multithreaded Pacman Game
+Multithreaded Snakes Game
 =========================
 
-Implement a multithreaded version of the arcade video game [Pacman](https://en.wikipedia.org/wiki/Pac-Man). This version will be a
+Implement a multithreaded version of the video game [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)). This version will be a
 Computer vs Human game. Each enemy will be independent and the number of enemies is configurable. Below you can see the general
-requirements for the enemies and human player (pacman) interation.
+requirements for the enemies and human player (snake) interation.
 
-![Pacman](pacman.png)
+![Snakes](snakes.png)
 
 Technical Requirements
 ----------------------
-- The game's maze layout can be static.
-- The `pacman` gamer must be controlled by the user.
-- Enemies are autonomous entities that will move a random way.
-- Enemies and pacman should respect the layout limits and walls.
-- Enemies number can be configurable on game's start.
+- The game's layout can be static.
+- Food dots can be randomly located in the layout.
+- Number of food dots must be configured in the game's tart.
+- The main `snake` gamer must be controlled by the user.
+- Enemy snakes are autonomous entities that will move a random way.
+- Enemy snakes and main snake should respect the layout limits and walls.
+- Enemy snakes number can be configurable on game's start.
 - Each enemy's behaviour will be implemented as a separated thread.
-- Enemies and pacman threads must use the same map or game layout data structure resource.
-- Display obtained pacman's scores.
-- Pacman loses when an enemy touches it.
-- Pacman wins the game when it has taken all coins in the map.
+- Enemy snakes and main sneak threads must use the same map or game layout data structure resource.
+- Display obtained main snake's scores.
+- Main snake grow one unit on every eaten food dot.
+- Enemy snakes can also grow when they touch food dots.
+- Main snake loses when it has been hit 10 times by other snake or it touches the limits or walls.
+- Main snake wins the game when all food dots have eaten and main snake has the largest lenght.
 
 General Requirements
 --------------------
@@ -28,9 +32,9 @@ General Requirements
 
 Deliverables
 ------------
-- Source code in each team's member repository (`ap-labs/challenges/pacman`).
+- Source code in each team's member repository (`ap-labs/challenges/snakes`).
 - Architecture Document - [ARCHITECTURE.md](ARCHITECTURE.md)
-- Build/Run automation (`Makefile` and documentation - [PACMAN.md](PACMAN.md))
+- Build/Run automation (`Makefile` and documentation - [SNAKES.md](SNAKES.md))
 - Project's presentation (5-10 minutes)
 
 
@@ -45,7 +49,7 @@ Permitted programming languages
 
 Submission Details
 ------------------
-- Project's `shortName=pacman`
+- Project's `shortName=snakes`
 - Read [Classify API](../../classify.md)
 
 Grading Policy
@@ -62,4 +66,4 @@ Grading Policy
 - **Extra 15% bonus**
 
   You can cat an extra bonus if you implement an Artificial Intelligence algorithm in enemies behaviour
-  for finding the pacman location, trace the route and follow it.
+  for finding the main snake location, trace the route and follow it.

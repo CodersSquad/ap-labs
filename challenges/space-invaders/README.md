@@ -9,7 +9,7 @@ requirements for the space invaders and main shooter interaction.
 
 Technical Requirements
 ----------------------
-- The game's path layout can be static.
+- The game's layout can be static.
 - The shooter must be controlled by the user.
 - Space Invaders are autonomous entities that will move and shoot in a random way.
 - Space Invaders and shooter should respect the layout limits.
