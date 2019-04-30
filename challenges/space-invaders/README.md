@@ -61,5 +61,5 @@ Grading Policy
 
 - **Extra 15% bonus**
 
-  You can cat an extra bonus if you implement an Artificial Intelligence algorithm in space invaders behaviour
+  You can get an extra bonus if you implement an Artificial Intelligence algorithm in space invaders behaviour
   for finding the main shooter location, trace the route and follow it.

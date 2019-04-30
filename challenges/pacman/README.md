@@ -61,5 +61,5 @@ Grading Policy
 
 - **Extra 15% bonus**
 
-  You can cat an extra bonus if you implement an Artificial Intelligence algorithm in enemies behaviour
+  You get cat an extra bonus if you implement an Artificial Intelligence algorithm in enemies behaviour
   for finding the pacman location, trace the route and follow it.

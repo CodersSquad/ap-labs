@@ -59,4 +59,4 @@ Grading Policy
 
 - **Extra 15% bonus**
 
-  You can cat an extra bonus if you implement an Artificial Intelleigence algorithm in semaphores synchronization.
+  You can get an extra bonus if you implement an Artificial Intelleigence algorithm in semaphores synchronization.
