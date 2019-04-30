@@ -1,5 +1,6 @@
-Multithreaded Pacman
-====================
+Multithreaded Pacman Game
+=========================
+
 Implement a multithreaded version of the arcade video game [Pacman](https://en.wikipedia.org/wiki/Pac-Man). This version will be a
 Computer vs Human game. Each enemy will be independent and the number of enemies is configurable. Below you can see the general
 requirements for the enemies and human player (pacman) interation.
@@ -16,7 +17,7 @@ Technical Requirements
 - Each enemy's behaviour will be implemented as a separated thread.
 - Enemies and pacman threads must use the same map or game layout data structure resource.
 - Display obtained pacman's scores.
-- Pacman  loses  when an enemy touches it.
+- Pacman loses when an enemy touches it.
 - Pacman wins the game when it has taken all coins in the map.
 
 General Requirements
@@ -40,6 +41,7 @@ Permitted programming languages
   - Go
 - User Interface (optional)
   - Any
+  - If it's terminal, output must be human-readable
 
 Submission Details
 ------------------
@@ -56,3 +58,8 @@ Grading Policy
 | Coding best practices        | 10%   |
 | Presentation                 | 20%   |
 | TOTAL                        | 100%  |
+
+- **Extra 15% bonus**
+
+  You can cat an extra bonus if you implement an Artificial Intelligence algorithm in enemies behaviour
+  for finding the pacman location, trace the route and follow it.
