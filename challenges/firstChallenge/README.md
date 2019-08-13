@@ -33,13 +33,32 @@ Output: 3
 Note that the answer must be a substring, `pwke` is a subsequence and not a substring.
 
 
+Build Requirements
+------------------
+```
+# Build Requirements here
+```
+
+
+How to build
+------------
+```
+# instructions here
+```
+
+How to Run
+----------
+```
+# instructions here
+```
+
+
 Submission Requirements
 -----------------------
-
 - Use the programming language of your choice
-- Create a personal repository called `ap-labs`
-- Create new directory `challenges`
-- Add your code into a new directory at `challenges/chal1`
-- Document description, compilation and execution in a `README.md` file
+- Fill the [Build Requirements](#build-requirements), [How to build](#how-to-Build) and [How to Run](#how-to-run) sections on this `README.md` file.
 - You can use an online IDE for testing your code (e.g. https://ideone.com/)
-- Don't forget to share the link of your github repository.
+- Submit your solution with:
+```
+make submit
+```

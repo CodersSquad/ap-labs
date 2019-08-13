@@ -1,65 +1,63 @@
-Classify API - Submission Instructions
-======================================
-
-**NOTE:** I'm using  user `obedmr` and lab `lab4.1` for testing purposes. Your real submission should use your github user account in lower case and the proper lab name.
+Classify API Reference
+======================
 
 ## Software requirements
 
 - git
+- make
 - curl
-- [jq](https://stedolan.github.io/jq/download/) (recommended for easier/readable output)
+- [jq](https://stedolan.github.io/jq/download/)
 
-## Set initial variables
-```
-export CLASSIFY_API_URL=https://classify-234103.appspot.com
-export USER=obedmr
-export LAB=lab4.1
-```
 
-## Get your Classify API ID
+Create you account in Classify
+------------------------------
 ```
-userID=$(curl -k $CLASSIFY_API_URL/users/\?githubID\=$USER | jq -r '.users[0].ID')
+GITHUB_USER=<your_user> NAME="<your full name>" SCHOOL_ID=<your_school_id> make user
 ```
 
-## Get lab ID
+**Example:**
 ```
-labID=$(curl $CLASSIFY_API_URL/labs/\?shortName\=$LAB | jq -r '.labs[0].ID')
-```
-
-## Submit your lab
-**Note:** Before submitting, make sure you do the common `git add`, `git commit` and `git push` for the new code changes in your `ap-labs` repository.
-```
-curl -k -X POST -d "commit=$(git rev-parse --short master)" $CLASSIFY_API_URL/labs/$userID/$labID | jq .
-```
-
-Expected sample output:
-```
+➜  ap-labs git:(master) ✗ GITHUB_USER=demo NAME="Demo User" SCHOOL_ID="A00123456" make user
+curl -k -s -X POST -d "githubID=demo&name=Demo User&schoolID=A00123456" http://localhost:8080/users/ | jq
 {
-  "commit": "4b04c22",
-  "labID": "2fb40f0d-62ea-4b71-88b1-eee6ca18d60r",
-  "message": "Submission Accepted",
-  "submissionDate": "Tue Apr  2 14:16:26 2019",
-  "userID": "ca83e551-5529-4fc0-971c-161f4f36516a"
+  "message": "Welcome demo to the Classify API.",
+  "user": {
+    "ID": "89007637-4441-441c-ad6c-3f576aebb36f",
+    "Name": "Demo User",
+    "GithubID": "demo",
+    "SchoolID": "A00123456"
+  }
 }
 ```
 
+Verify that your user exists in Classify
+----------------------------------------
+```
+GITHUB_USER=<your_user> make test
+```
 
-## Check your Lab's submission
+**Example:**
 ```
-curl -k $CLASSIFY_API_URL/labs/$userID/$labID | jq .
-```
-
-Expected sample output:
-```
+➜  ap-labs git:(master) ✗ GITHUB_USER=demo  make test
+User Information
+curl -k -s http://localhost:8080/users/\?githubID\=demo  | jq
 {
-  "message": "Lab's submission data was successfully retrieved",
-  "submission": {
-    "ID": "61fa9c33-9147-46f1-872a-03f1fc1d1be7",
-    "UserID": "ca83e551-5529-4fc0-971c-161f4f36516a",
-    "LabID": "2fb40f0d-62ea-4b71-88b1-eee6ca18d60r",
-    "CommitID": "4b04c22",
-    "Date": "2019-04-02T20:16:26.402621Z"
-  },
-  "user": "ca83e551-5529-4fc0-971c-161f4f36516a"
+  "message": "List of Users",
+  "users": [
+    {
+      "ID": "89007637-4441-441c-ad6c-3f576aebb36f",
+      "Name": "Demo User",
+      "GithubID": "demo",
+      "SchoolID": "A00123456"
+    }
+  ]
 }
+```
+
+Submit a Lab to Classify
+------------------------
+You can submit your lab's solutions as many times you want **before the lab's due date**. After the due date, it will not be possible to submit any new attempt.
+```
+cd /path/of/your/lab
+make submit
 ```
