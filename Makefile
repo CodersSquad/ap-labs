@@ -2,7 +2,7 @@
 NAME		  ?= Demo User
 GITHUB_USER       ?= demo
 SCHOOL_ID         ?= A00123456
-CLASSIFY_ENDPOINT ?= https://classify-234103.appspot.com/
+CLASSIFY_ENDPOINT ?= http://classify.obedmr.com/
 EXECUTABLES        = curl jq
 
 all: user
