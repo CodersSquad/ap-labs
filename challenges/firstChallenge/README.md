@@ -46,6 +46,7 @@ How to build
 # instructions here
 ```
 
+
 How to Run
 ----------
 ```
@@ -53,12 +54,17 @@ How to Run
 ```
 
 
-Submission Requirements
------------------------
-- Use the programming language of your choice
-- Fill the [Build Requirements](#build-requirements), [How to build](#how-to-Build) and [How to Run](#how-to-run) sections on this `README.md` file.
-- You can use an online IDE for testing your code (e.g. https://ideone.com/)
-- Submit your solution with:
+General instructions
+--------------------
+1. Don't forget to do a `pull --rebase origin master` before anything.
+2. Submit your code to your personal fork.
+3. Don't forget to update this `README.md` file with your project's `requirements`, `build` and `how to run` sections.
+4. Have fun and don't forget the next section.
+
+
+How to submit your work
+=======================
 ```
-make submit
+GITHUB_USER=<your_github_user>  make submit
 ```
+More details at: [Classify API](../../classify.md)
