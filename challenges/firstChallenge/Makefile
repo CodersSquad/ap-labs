@@ -15,6 +15,7 @@ $(TARGET) : $(OBJFILES)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
 
 submit: deps
+	@echo "Submitting your lab"
 	@if [[ $$(git ls-files --others --modified --exclude-standard | wc -l) -gt 0 ]]; then \
 		echo "You have uncommitted files. Verify them and then, add and commit them."; \
 		make clean; \
