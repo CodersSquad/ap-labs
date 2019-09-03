@@ -1,7 +1,8 @@
 Lab - Month Day Calculator
 ===========================
 Using basic concepts of [Pointers and Structures lecture](http://talks.obedmr.com/hello-c-world/01-pointers-structures.slide#8),
-create a program that calculates the month's day from a given year and year's day.
+create a program that calculates the month's day from a given year and year's day. Use pointers for the month and month's day variables.
+Don't forget to add proper errors handling in your program.
 
 Modify the provided `month_day.c` file to receive the parameters in the way and also print the proper formatted output.
 
