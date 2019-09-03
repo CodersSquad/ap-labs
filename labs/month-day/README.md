@@ -1,0 +1,29 @@
+Lab - Month Day Calculator
+===========================
+Using basic concepts of [Pointers and Structures lecture](http://talks.obedmr.com/hello-c-world/01-pointers-structures.slide#8),
+create a program that calculates the month's day from a given year and year's day.
+
+Modify the provided `month_day.c` file to receive the parameters in the way and also print the proper formatted output.
+
+```
+# ./month_day <year> <yearday>
+# Example for Feb 2nd, 2019:
+./month_day 2019 33
+Feb 02, 2019
+```
+
+
+General instructions
+--------------------
+1. Don't forget to do a `pull --rebase origin master` before anything.
+2. Submit your code to your personal fork.
+3. Use the  `month_day.c` file for your code.
+4. Have fun and don't forget the [next section](#how-to-submit-your-work).
+
+
+How to submit your work
+=======================
+```
+GITHUB_USER=<your_github_user>  make submit
+```
+More details at: [Classify API](../../classify.md)
