@@ -11,7 +11,8 @@ Requirements
   - Others
 - Use the provided template `dir-scan.go`
 - Repeated log classes are not allowed.
-- You need to follow the output format guidelines.
+- In some system's paths, you may run your program as super user (root).
+- You need to follow the output format guidelines. Extra characters or improper error handling will be penalized in the project's grade.
 - Coding best practices that we learned in class will be reviewed.
 - Before submitting you code, make sure it's compiling and running correctly.
 
@@ -31,13 +32,16 @@ Directory Scanner Tool
 +-------------------------+------+
 | Directories             | 10   |
 | Symbolic Links          | 5    |
+| Devices                 | 11   |
+| Sockets                 | 2    |
+| Symbolic Links          | 5    |
 | Other files             | 50   |
 +-------------------------+------+
 ```
 
 Test Cases
 ----------
-The program will be tested with the following cases:
+The program will be tested with the following paths:
 
 1. `/tmp` directory
 ```
@@ -49,9 +53,14 @@ The program will be tested with the following cases:
 ./directory-scanner /etc
 ```
 
-2. `/usr/lib` directory
+3. `/usr/lib` directory
 ```
 ./directory-scanner /usr/lib
+```
+
+4. `/dev` directory
+```
+./directory-scanner /dev
 ```
 
 Useful links
