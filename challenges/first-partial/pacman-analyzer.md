@@ -27,7 +27,7 @@ Requirements
 Sample Execution
 ----------------
 ```
-./pacman-analizer.o pacman.log
+./pacman-analizer.o pacman.txt
 ```
 
 
@@ -64,7 +64,7 @@ Test Cases
 
 The program will be tested with the following log file:
 
-1. [pacman.log](./pacman.log)
+1. [pacman.txt](./pacman.txt)
 ```
-./pacman-analyzer.o pacman.log
+./pacman-analyzer.o pacman.txt
 ```
