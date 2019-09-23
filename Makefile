@@ -12,9 +12,9 @@ deps:
          $(if $(shell which $(exec)),,$(error "There's no '$(exec)' binary in your PATH")))
 
 user: deps
-	curl -k -s -X POST -d "githubID=${GITHUB_USER}&name=${NAME}&schoolID=${SCHOOL_ID}" $(CLASSIFY_ENDPOINT)/users/ | jq
+	curl -k -s -X POST -d "githubID=${GITHUB_USER}&name=${NAME}&schoolID=${SCHOOL_ID}" $(CLASSIFY_ENDPOINT)/users | jq
 
 test: deps
 	@echo User Information
-	curl -k -s $(CLASSIFY_ENDPOINT)/users/\?githubID\=$(GITHUB_USER)  | jq
+	curl -k -s $(CLASSIFY_ENDPOINT)/users\?githubID\=$(GITHUB_USER)  | jq
 
