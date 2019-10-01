@@ -69,7 +69,7 @@ git pull origin master
 
 2. Create a new branch for your current lab
 ```
-git branch -b my-lab-name
+git checkout -b my-lab-name
 cd labs/my-lab-name
 ```
 
