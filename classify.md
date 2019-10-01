@@ -57,7 +57,41 @@ curl -k -s http://localhost:8080/users/\?githubID\=demo  | jq
 Submit a Lab to Classify
 ------------------------
 You can submit your lab's solutions as many times you want **before the lab's due date**. After the due date, it will not be possible to submit any new attempt.
+
+The `make submit` mechanism will submit the `branch` and the `commit` ID of your latest change. It's highly recommend to create a new branch for each lab.
+
+Below an example of the complete flow from pulling to submitting your labs:
+
+1. Pull latest original `ap-labs` content
 ```
-cd /path/of/your/lab
-make submit
+git pull origin master
+```
+
+2. Create a new branch for your current lab
+```
+git branch -b my-lab-name
+cd labs/my-lab-name
+```
+
+3. Have fun with your lab and make sure it compiles and runs
+```
+# Do your best on solving the lab
+
+make
+
+# Test, test and test until you're sure it works as requested.
+
+make clean
+```
+
+4. Add, Commit and Push your code
+```
+git add .
+git commit -s -m "Solve my-lab-name"
+git push myuser my-lab-name --force
+```
+
+5. Submit your work to the Classify API
+```
+GITHUB_USER=demo make submit
 ```
