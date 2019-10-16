@@ -21,8 +21,6 @@ Europe/London : 02:00:00
 
 General Requirements and Considerations
 ---------------------------------------
-- Use the logger that was done on [advanced-logger](https://github.com/CodersSquad/ap-labs/tree/master/labs/advanced-logger).
-- `printf` function calls are not allowed, use your logger
 - Use the `clock2.go` and `clockWall.go` files for your implementation.
 - Follow the command-line arguments convention.
 - Don't forget to handle errors properly.

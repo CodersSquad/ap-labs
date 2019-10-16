@@ -7,8 +7,6 @@ That is, if the user sets `-depth=3`, then only URLs reachable by at most 3 link
 
 General Requirements and Considerations
 ---------------------------------------
-- Use the logger that was done on [advanced-logger](https://github.com/CodersSquad/ap-labs/tree/master/labs/advanced-logger).
-- `printf` function calls are not allowed, use your logger
 - Use the `crawl3.go` file for your implementation.
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
