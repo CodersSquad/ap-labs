@@ -1,7 +1,7 @@
-Challenge:  First Term Partial
+Challenge: Second Partial Exam
 ==============================
 
-This is the first term challenge-based exam for the Advanced Programming Class. Below you will find each of the challenge's parts details.
+This is the second term challenge-based partial exam for the Advanced Programming Class. Below you will find each of the challenge's parts details.
 
 - This is an individual challenge, keep the focus on you work.
 - You're free to use the internet for coding references.
@@ -13,8 +13,8 @@ General Submission Instructions
 --------------------
 
 1. Read and follow the instructions on each of the below exercices:
-  - [Pacman Log Analyzer](./pacman-analyzer.md)
-  - [Directory Scanner](./directory-scanner.md)
+  - [Simple IRC Server](./chat)
+  - [MyTop](./mytop)
 
 2. Commit and Push your code to your personal repository.
 
@@ -26,15 +26,7 @@ GITHUB_USER=<your_github_account> make submit
 GITHUB_USER=obedmr make submit
 ```
 
+
 Grading Policy
 --------------
-
-The grading policy is quite simple, most falls in the test cases. Below the percentages table:
-
-
-| Concept                             | %    |
-|-------------------------------------|------|
-| Code Style best practices           | 20%  |
-| Test Cases                          | 60%  |
-| Program meets with all requirements | 20%  |
-| TOTAL                               | 100% |
+The grading policy is defined on each exercise.

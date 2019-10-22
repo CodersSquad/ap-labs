@@ -11,12 +11,13 @@ Requirements
 - Add support for usernames. Instead of identifying users by their `ip:port`, they will be identified with their usernames.
 - Add support for the following IRC sub-commands
 
-| Sub-command         | description                                             |
-|---------------------|---------------------------------------------------------|
-| `/users`            | To list all connected users                             |
-| `/msg <user> <msg>` | To send a direct message to the specified `user`        |
-| `/time`             | Get IRC Server's localtime                              |
-| `/user <user>`      | Get more details about `user` (Username and IP address) |
+| Sub-command         | description                                                                  |
+|---------------------|------------------------------------------------------------------------------|
+| `/users`            | To list all connected users                                                  |
+| `/msg <user> <msg>` | To send a direct message to the specified `user`                             |
+| `/time`             | Get IRC Server's localtime                                                   |
+| `/user <user>`      | Get more details about `user` (Username and IP address)                      |
+| `/kick <user>`      | To kick (remove) an `user` from the channel (only channel ADMIN can do this) |
 
 - You need to follow the output format guidelines.
 - Coding best practices that we learned in class will be reviewed.
@@ -32,29 +33,58 @@ Sample IRC Server output
 irc-server > Simple IRC Server started at localhost:9000
 irc-server > Ready for receiving new clients
 irc-server > New connected user [user1]
+irc-server > [user1] was promoted as the channel ADMIN
 irc-server > New connected user [user2]
-irc-server > [user1] left
-
+irc-server > New connected user [user3]
+irc-server > [user2] was kicked
+irc-server > [user3] left
 ```
 
-Sample 2 IRC clients output
----------------------------
+Sample 3 IRC clients test scenario
+----------------------------------
+- `user1` session
 ```
 # go run client.go -user user1 -server localhost:9000
 irc-server > Welcome to the Simple IRC Server
 irc-server > Your user [user1] is successfully logged
-user1 > Hi
-^C
+irc-server > Congrats, you were the first user.
+irc-server > You're the new IRC Server ADMIN
+irc-server > New connected user [user2]
+irc-server > New connected user [user3]
+user1 > Hi all
+user2 > &@*^
+user1 > /kick user2
+irc-server > [user2] was kicked from channel for bad language policy violation
+user1 >
+irc-server > [user3] left channel
+user1 >
 ```
 
+- `user2` session
 ```
 # go run client.go -user user2 -server localhost:9000
 irc-server > Welcome to the Simple IRC Server
 irc-server > Your user [user2] is successfully logged
 user2 >
-user1 > Hi
-user2 >
-irc-server > [user1] left
+irc-server > New connected user [user3]
+user1 > Hi all
+user2 > &@*^
+irc-server > You're kicked from this channel
+irc-server > Bad language is not allowed on this channel
+
+```
+
+- `user3` session
+```
+# go run client.go -user user3 -server localhost:9000
+irc-server > Welcome to the Simple IRC Server
+irc-server > Your user [user3] is successfully logged
+user3 >
+user1 > Hi all
+irc-server > New connected user [user2]
+user2 > &@*^
+irc-server > [user2] was kicked from channel for bad language policy violation
+^C
 ```
 
 Sample Sub-Commands output
@@ -77,7 +107,7 @@ Grading
 | /msg <user> <msg>      | 20%  |
 | /time                  | 20%  |
 | /user <user>           | 20%  |
-| Conding best practices | 20%  |
+| /kick <user>           | 20%  |
 | TOTAL                  | 100% |
 
 Useful links
