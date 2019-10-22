@@ -3,7 +3,7 @@ Lab - Progress Notifier with Signals
 Implement a program for encoding and decoding files by using the `Base64` [algorithm](https://en.wikibooks.org/wiki/Algorithm_Implementation/Miscellaneous/Base64).
 You're free to copy from  previous link's implementation (don't forget to reference to the author's page), the interesting part will be the implementation of signal handlers for progress status.
 
-Add one or multiple signal handlers to catch the `SIGINFO` and `SIGINT`. Once a signal is catched, your program should dislay the current progress of the encoding or deconding tasks.
+Add one or multiple signal handlers to catch the `SIGUSR1` and `SIGINT`. Once a signal is catched, your program should dislay the current progress of the encoding or deconding tasks.
 
 You will need the proper mechanisms for tracking the progress of any encoding/decoding task. You program must support plain text input files.
 
