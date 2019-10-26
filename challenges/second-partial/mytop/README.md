@@ -8,7 +8,7 @@ Requirements
 - Use the provided template `mytop.c`
 - As a realtime app, screen should be automatically updated with any change in processes.
 - A multi-threaded implementation can be used here.
-- Add support for current processes dashboard snapshots to file (mytop-status-XXXXXX).
+- [OPTIONAL] Add support for current processes dashboard snapshots to file (mytop-status-XXXXXX).
   - Use the `SIGINT` to capture the current processes dashboard
   - Save the current processes dashboard to a new file mytop-status-DATE
 - You need to follow the output format guidelines.
