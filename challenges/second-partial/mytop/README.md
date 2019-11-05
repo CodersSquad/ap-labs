@@ -37,7 +37,7 @@ Grading
 | State, Memory & # of Threads   | 20%  |
 | Open Files                     | 20%  |
 | MyTop Status Snapshots         | 20%  |
-| Conding best practices         | 20%  |
+| Coding best practices          | 20%  |
 | TOTAL                          | 100% |
 
 Useful links and resources
