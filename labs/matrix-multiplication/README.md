@@ -1,5 +1,5 @@
-Lab 4.2 - Matrix Multiplication
-===============================
+Lab - Matrix Multiplication
+===========================
 On this lab you will create a multi-threaded matrix multiplicator with the usage of the `pthreads` library. You will see the following concurrent programming concepts:
 
 - Multitheading
@@ -65,7 +65,8 @@ Data files
 
 Final Requirements and Considerations
 ---------------------------------------
-- Use the logger that was done on [lab2.4](https://github.com/CodersSquad/ap-labs/tree/master/labs/lab2.4).
+- Use the logger that was done on [advanced-logger](https://github.com/CodersSquad/ap-labs/tree/master/labs/advanced-logger).
+- `printf` function calls are not allowed, use your logger.
 - Use the `*.c` files for implementing your code.
 - Use the `Makefile` for compilation.
 - Update `README.md` with the proper steps for building and running your code.
@@ -73,7 +74,9 @@ Final Requirements and Considerations
 - Coding best practices implementation will be also considered.
 
 
-Submission Details
-==================
-
-Read [Classify API](../../classify.md)
+How to submit your work
+=======================
+```
+GITHUB_USER=<your_github_user>  make submit
+```
+More details at: [Classify API](../../classify.md)
