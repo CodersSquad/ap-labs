@@ -1,5 +1,5 @@
-Lab 5.1 - OpenMP Labs
-=====================
+Lab - OpenMP
+============
 
 This is a single lab for multiple OpenMP exercises that we'll be doing in class. Below you can see the list of exercises that
 will considered for the lab's grading. The goal of each exercise is to convert its default serial implementation to
@@ -17,7 +17,7 @@ a parallel implementation with OpenMP.
 
 Final Requirements and Considerations
 ---------------------------------------
-- Use the logger that was done on [lab2.4](https://github.com/CodersSquad/ap-labs/tree/master/labs/lab2.4).
+- Use the logger that was done on [advanced-logger](https://github.com/CodersSquad/ap-labs/tree/master/labs/advanced-logger).
 - Use the `*.c` files for implementing your code.
 - Use the `Makefile` for compilation.
 - Update `README.md` with the proper steps for building and running your code.
@@ -25,7 +25,9 @@ Final Requirements and Considerations
 - Coding best practices implementation will be also considered.
 
 
-Submission Details
-==================
-
-Read [Classify API](../../classify.md)
+How to submit your work
+=======================
+```
+GITHUB_USER=<your_github_user>  make submit
+```
+More details at: [Classify API](../../classify.md)
