@@ -1,7 +1,9 @@
 # Classify Requirements
-GITHUB_USER       ?= demo
-CLASSIFY_ENDPOINT ?= http://classify.obedmr.com
-EXECUTABLES        = curl jq
+GITHUB_USER         ?= demo
+CLASSIFY_ENDPOINT   ?= http://classify.obedmr.com
+CLASSIFY_TOKEN      ?= demo
+CLASSIFY_TOKEN_FILE ?= ${HOME}/.classify_token
+EXECUTABLES          = curl jq
 
 # Common Submission targets
 
@@ -15,8 +17,9 @@ submit: deps
 	@$(eval USER_ID := $(shell curl -s -k ${CLASSIFY_ENDPOINT}/users\?githubID\=${GITHUB_USER} | jq -r '.users[0].ID'))
 	@$(eval BRANCH := $(shell git rev-parse --abbrev-ref HEAD))
 	@$(eval COMMIT_ID := $(shell git log --format='%H' -n 1))
+	@$(eval CLASSIFY_TOKEN := $(shell [ -f ${CLASSIFY_TOKEN_FILE} ] && cat ${CLASSIFY_TOKEN_FILE} || echo ${CLASSIFY_TOKEN}))
 
-	@curl -k -s -X POST -d "branch=$(BRANCH)&commit=$(COMMIT_ID)" $(CLASSIFY_ENDPOINT)/labs/$(USER_ID)/$$(basename "$$PWD") | jq
+	@curl -k -s -X POST -d "branch=$(BRANCH)&commit=$(COMMIT_ID)&token=$(CLASSIFY_TOKEN)" $(CLASSIFY_ENDPOINT)/labs/$(USER_ID)/$$(basename "$$PWD") | jq
 
 check-submission:
 	@$(eval USER_ID := $(shell curl -s -k ${CLASSIFY_ENDPOINT}/users\?githubID\=${GITHUB_USER} | jq -r '.users[0].ID'))
