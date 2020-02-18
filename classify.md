@@ -62,7 +62,12 @@ The `make submit` mechanism will submit the `branch` and the `commit` ID of your
 
 Below an example of the complete flow from pulling to submitting your labs:
 
-1. Pull latest original `ap-labs` content
+0. Checkout into the master branch
+```
+git checkout master
+```
+
+1. Pull latest original `ap-labs` content. This will synchronize with the original class repository.
 ```
 git pull origin master
 ```
@@ -76,22 +81,17 @@ cd labs/my-lab-name
 3. Have fun with your lab and make sure it compiles and runs
 ```
 # Do your best on solving the lab
-
-make
-
-# Test, test and test until you're sure it works as requested.
-
-make clean
 ```
 
-4. Add, Commit and Push your code
+4. Once you are done with your code: add, commit and push your code to your remote personal copy (fork) of the original repository.
 ```
 git add .
 git commit -s -m "Solve my-lab-name"
 git push myuser my-lab-name --force
 ```
 
-5. Submit your work to the Classify API
+5. Submit your work to the Classify API. This will notify the professor that your work has been completed.
+Change the `demo` user to your github user account.
 ```
 GITHUB_USER=demo make submit
 ```
