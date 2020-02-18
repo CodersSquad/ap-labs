@@ -16,7 +16,7 @@ Feb 02, 2019
 
 General instructions
 --------------------
-1. Don't forget to do a `pull --rebase origin master` before anything.
+1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
 2. Submit your code to your personal fork.
 3. Use the  `month_day.c` file for your code.
 4. Have fun and don't forget the [next section](#how-to-submit-your-work).
