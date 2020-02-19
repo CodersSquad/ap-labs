@@ -1,3 +1,4 @@
+
 First Code Challenge
 ====================
 
@@ -36,27 +37,19 @@ Note that the answer must be a substring, `pwke` is a subsequence and not a subs
 Build Requirements
 ------------------
 ```
-# Build Requirements here
+- python 3
 ```
-
-
-How to build
-------------
-```
-# instructions here
-```
-
 
 How to Run
 ----------
 ```
-# instructions here
+python main.py
 ```
 
 
 General instructions
 --------------------
-1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
+1. Don't forget to do a `pull --rebase origin master` before anything.
 2. Submit your code to your personal fork.
 3. Don't forget to update this `README.md` file with your project's `requirements`, `build` and `how to run` sections.
 4. Have fun and don't forget the next section.
