@@ -12,18 +12,19 @@ int mystrfind(char *origin, char *substr)
 
 - Your program needs to support the following arguments. Check the expected output:
 ```
-./main originalVeryLongString Addition Add
+$ ./main originalVeryLongString Addition Add
 Initial Lenght      : 22
 New String          : originalVeryLongStringAddition
 SubString was found : yes
 ```
 
-General instructions
---------------------
-1. Don't forget to do a `pull --rebase origin master` before anything.
-2. Submit your code to your personal fork.
+General instructions and advices
+--------------------------------
+0. Take a look on [Linking Process in C](http://talks.obedmr.com/hello-c-world/03-linking.slide#1) for a better undersanding.
+1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
+2. Push your code to your personal fork.
 3. Use the  `strlib.c` and `main.c` files for your code.
-4. Have fun and don't forget the [next section](#how-to-submit-your-work).
+4. Have fun and don't forget the following section.
 
 
 How to submit your work
