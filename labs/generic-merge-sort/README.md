@@ -8,9 +8,9 @@ on **Section 5.11 - Pointers to Functions**.
 General instructions
 --------------------
 1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
-2. Submit your code to your personal fork.
+2. Push your code to your personal fork.
 3. Use the  `generic_merge_sort.c` file for your code.
-4. Have fun and don't forget the next section.
+4. Have fun and don't forget the following section.
 
 
 How to submit your work
