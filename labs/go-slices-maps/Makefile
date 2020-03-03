@@ -1,3 +1,2 @@
-SHELL    = /bin/bash
 
-include ../common.mk
+include ../../common.mk
