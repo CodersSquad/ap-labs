@@ -8,24 +8,20 @@ Requirements
 - Given one path, the program must count the following file's types:
   - Directories
   - Symbolic Links
+  - Devices
+  - Sockets
   - Others
 - Use the provided template `dir-scan.go`
-- Repeated log classes are not allowed.
 - In some system's paths, you may run your program as super user (root).
 - You need to follow the output format guidelines. Extra characters or improper error handling will be penalized in the project's grade.
 - Coding best practices that we learned in class will be reviewed.
 - Before submitting you code, make sure it's compiling and running correctly.
 
 
-Sample Execution
-----------------
+Sample Execution and output
+---------------------------
 ```
-./directory-scanner /tmp
-```
-
-Sample Expected output
-----------------------
-```
+$ ./directory-scanner /tmp
 Directory Scanner Tool
 +-------------------------+------+
 | Path                    | /tmp |
@@ -45,22 +41,22 @@ The program will be tested with the following paths:
 
 1. `/tmp` directory
 ```
-./directory-scanner /tmp
+$ ./directory-scanner /tmp
 ```
 
 2. `/etc` directory
 ```
-./directory-scanner /etc
+$ ./directory-scanner /etc
 ```
 
 3. `/usr/lib` directory
 ```
-./directory-scanner /usr/lib
+$ ./directory-scanner /usr/lib
 ```
 
 4. `/dev` directory
 ```
-./directory-scanner /dev
+$ ./directory-scanner /dev
 ```
 
 Useful links

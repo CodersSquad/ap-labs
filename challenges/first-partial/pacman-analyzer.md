@@ -24,16 +24,13 @@ Requirements
 - Before submitting you code, make sure it's compiling and running correctly.
 
 
-Sample Execution
-----------------
-```
-./pacman-analizer.o pacman.txt
-```
+Sample execution and expected output file `packages_report.txt`
+------------------------------------------------
 
+**Note:** The following report is not containing real values from the original [`pacman.txt`](./pacman.txt) file. This is just an example. 
 
-Sample Expected output file `packages_report.txt`
-----------------------------------------------
 ```
+$ ./pacman-analizer pacman.txt
 Pacman Packages Report
 ----------------------
 - Installed packages : 150
@@ -66,5 +63,5 @@ The program will be tested with the following log file:
 
 1. [pacman.txt](./pacman.txt)
 ```
-./pacman-analyzer.o pacman.txt
+$ ./pacman-analyzer pacman.txt
 ```
