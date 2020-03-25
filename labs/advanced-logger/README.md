@@ -18,7 +18,7 @@ You can use the **The Linux Programming Interface** book as a reference for your
 General Instructions
 --------------------
 - Use the `testLogger.c` file for testing your `logger.c` library implementation.
-- Use the `Makefile` for compilation.
+- You can update the `Makefile` for your compilation and linking.
 - Update `README.md` with the proper steps for building and running your code.
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.

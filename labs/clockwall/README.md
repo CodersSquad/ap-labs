@@ -5,12 +5,13 @@ Modify the [clock2.go](./clock2.go) to accept a port number, and write a program
 
 ```
 # Clock Servers initialization
-$ TZ=US/Eastern    ./clock2 -port 8010 &
-$ TZ=Asia/Tokyo    ./clock2 -port 8020 &
-$ TZ=Europe/London ./clock2 -port 8030 &
+# The following 3 commands are setting up 3 clock2 processes in the same terminal.
+$ TZ=US/Eastern    go run clock2.go -port 8010 &
+$ TZ=Asia/Tokyo    go run clock2.go -port 8020 &
+$ TZ=Europe/London go run clock2.go -port 8030 &
 
 # Starting clockWall client
-$ clockWall NewYork=localhost:8010 Tokyo=localhost:8020 London=localhost:8030
+$ go run clockWall.go NewYork=localhost:8010 Tokyo=localhost:8020 London=localhost:8030
 US/Eastern    : 12:00:00
 Asia/Tokyo    : 17:00:00
 Europe/London : 02:00:00
