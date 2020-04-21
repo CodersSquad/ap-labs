@@ -56,9 +56,14 @@ General Requirements and Considerations
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
 
-How to submit your work
-=======================
+How to submit your work and check your submission
+=================================================
 ```
-GITHUB_USER=<your_github_user>  make submit
+# Submit
+GITHUB_USER=<your_github_user> make submit
+
+# Check Submission
+GITHUB_USER=<your_github_user> make check-submission
 ```
-More details at: [Classify API](../../classify.md)
+
+More details about Classify API : [Classify](../../classify.md)
