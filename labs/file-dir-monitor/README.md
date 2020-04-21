@@ -47,5 +47,3 @@ GITHUB_USER=<your_github_user> make check-submission
 ```
 
 More details about Classify API : [Classify](../../classify.md)
-
-
