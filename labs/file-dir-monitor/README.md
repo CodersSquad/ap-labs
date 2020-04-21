@@ -10,10 +10,10 @@ When a new subdirectory is added under the tree or a directory is deleted, the s
 General Requirements and Considerations
 ---------------------------------------
 - Use the logger that was done on [advanced-logger](https://github.com/CodersSquad/ap-labs/tree/master/labs/advanced-logger).
-- `printf` function calls are not allowed, use your logger
+- `printf` function calls are not allowed, use your logger.
 - Use the `inotify` [API](http://man7.org/linux/man-pages/man7/inotify.7.html).
 - Use the `monitor.c` file for implementing the lab's general flow.
-- Use the `Makefile` for compilation.
+- (Optional) Use the `Makefile` for compilation
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
 
@@ -36,11 +36,16 @@ sudo ./monitor /tmp
 ./monitor $(pwd)
 ```
 
-How to submit your work
-=======================
+How to submit your work and check your submission
+=================================================
 ```
-GITHUB_USER=<your_github_user>  make submit
+# Submit
+GITHUB_USER=<your_github_user> make submit
+
+# Check Submission
+GITHUB_USER=<your_github_user> make check-submission
 ```
-More details at: [Classify API](../../classify.md)
+
+More details about Classify API : [Classify](../../classify.md)
 
 
