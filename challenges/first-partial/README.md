@@ -31,7 +31,6 @@ Grading Policy
 
 The grading policy is quite simple, most falls in the test cases. Below the percentages table:
 
-
 | Concept                             | %    |
 |-------------------------------------|------|
 | Code Style best practices           | 20%  |

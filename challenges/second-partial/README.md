@@ -12,19 +12,24 @@ This is the second term challenge-based partial exam for the Advanced Programmin
 General Submission Instructions
 --------------------
 
-1. Read and follow the instructions on each of the below exercices:
+1. Read and follow the instructions on each of the below exercice:
   - [Simple IRC Server](./chat)
-  - [MyTop](./mytop)
 
 2. Commit and Push your code to your personal repository.
 
 3. Once you're done, follow common lab's sumission process. More details at: [Classify API](../../classify.md)
-```
-GITHUB_USER=<your_github_account> make submit
 
-# Example:
-GITHUB_USER=obedmr make submit
+How to submit your work and check your submission
+=================================================
 ```
+# Submit
+GITHUB_USER=<your_github_user> make submit
+
+# Check Submission
+GITHUB_USER=<your_github_user> make check-submission
+```
+
+More details about Classify API : [Classify](../../classify.md)
 
 
 Grading Policy
