@@ -49,7 +49,6 @@ Permitted programming languages
 
 Submission Details
 ------------------
-- Project's `shortName=snakes`
 - Read [Classify API](../../classify.md)
 
 Grading Policy

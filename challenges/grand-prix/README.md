@@ -44,7 +44,6 @@ Permitted programming languages
 
 Submission Details
 ------------------
-- Project's `shortName=grandPriSimulator`
 - Read [Classify API](../../classify.md)
 
 Grading Policy

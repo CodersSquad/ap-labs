@@ -45,7 +45,6 @@ Permitted programming languages
 
 Submission Details
 ------------------
-- Project's `shortName=pacman`
 - Read [Classify API](../../classify.md)
 
 Grading Policy
