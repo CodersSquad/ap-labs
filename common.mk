@@ -36,7 +36,7 @@ check-branch:
 	@if [[ $$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) = "master" ]]; then \
 		echo "You cannot make submissions on [master] branch," \
 		"please follow Classify API instructions to create a new branch for your lab and then submit your work."; \
-		echo "You can check the current branch you are on with:";  \
-		echo "git branch"; \
+		echo "You can check the current branch with the following command:";  \
+		echo "> git branch"; \
 		exit -1; \
 	fi

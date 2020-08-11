@@ -87,7 +87,7 @@ cd labs/my-lab-name
 ```
 git add .
 git commit -s -m "Solve my-lab-name"
-git push myuser my-lab-name --force
+git push myuser my-lab-name
 ```
 
 5. Submit your work to the Classify API. This will notify the professor that your work has been completed.
