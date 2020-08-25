@@ -17,7 +17,7 @@ Fahrenheit:   0, Celsius:  -17.8
 ```
 # ./fahrenheit_celsius <start> <end> <increment>
 # Example:
-./fahrenheit_celsius 0 100 10
+./fahrenheit_celsius 0 100 20
 Fahrenheit:   0, Celsius:  -17.8
 Fahrenheit:  20, Celsius:   -6.7
 Fahrenheit:  40, Celsius:    4.4
@@ -33,6 +33,21 @@ General instructions
 2. Submit your code to your personal fork.
 3. Use the  `fahrenheit_celsius.c` file for your code.
 4. Have fun and don't forget the next section.
+
+
+Test Suite
+----------
+Build and Test automation is already implemented with the following command. Below some general tips and comments.
+
+- Make sure that your program passes all test cases without errors.
+- Remember that this is being executed by a robot script.
+- You cannot edit the `lab.mk` file.
+- Failed compilation or segmentation faults means 0-graded.
+- Failed tests will be properly discounted from total grade.
+
+```
+make test
+```
 
 
 How to submit your work
