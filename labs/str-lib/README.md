@@ -10,12 +10,15 @@ int mystrfind(char *origin, char *substr)
 
 - Call all functions on `strlib.c` from the `main.c` file
 
-- Your program needs to support the following arguments. Check the expected output:
+- Your program needs to support the following arguments. Check the following examples for expected output:
 ```
-$ ./main originalVeryLongString Addition Add
-Initial Lenght      : 22
-New String          : originalVeryLongStringAddition
-SubString was found : yes
+$ ./main.o -add "Initial String " "This is the rest to be added"
+Initial Lenght      : 15
+New String          : Initial String This is the rest to be added
+New length          : 44
+
+$ ./main.o -find "Initial String " "Init"
+['Init'] string was found at [0] position
 ```
 
 General instructions and advices
@@ -23,7 +26,7 @@ General instructions and advices
 0. Take a look on [Linking Process in C](http://talks.obedmr.com/hello-c-world/03-linking.slide#1) for a better undersanding.
 1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
 2. Push your code to your personal fork.
-3. Use the  `strlib.c` and `main.c` files for your code.
+3. Use the  `strlib.c` and `static-linking.c` files for your code.
 4. Have fun and don't forget the following section.
 
 
