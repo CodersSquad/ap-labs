@@ -15,7 +15,7 @@ int mystrfind(char *origin, char *substr)
 $ ./main.o -add "Initial String " "This is the rest to be added"
 Initial Lenght      : 15
 New String          : Initial String This is the rest to be added
-New length          : 44
+New length          : 43
 
 $ ./main.o -find "Initial String " "Init"
 ['Init'] string was found at [0] position
