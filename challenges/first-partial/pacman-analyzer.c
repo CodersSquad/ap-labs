@@ -7,7 +7,7 @@ void analizeLog(char *logFile, char *report);
 int main(int argc, char **argv) {
 
     if (argc < 2) {
-	printf("Usage:./pacman-analizer.o pacman.log\n");
+	printf("Usage:./pacman-analizer.o \n");
 	return 1;
     }
 

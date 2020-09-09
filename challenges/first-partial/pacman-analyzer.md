@@ -20,17 +20,19 @@ Requirements
   - `close()`
 - You're not allowed to use the `getline` function. You will implement you're own `getline` function.
 - You need to follow the output format guidelines.
+- Don't forget to do a proper error handling and reporting
+- [`pacman-analyzer.c`](pacman-analyzer.c) is just a template, it may contain some issues, you must update it to meet with the requirements.
 - [Coding best practices](https://softfire-143705.appspot.com/programming-art/00-names.slide#1) that we learned in class will be reviewed.
 - Before submitting you code, make sure it's compiling and running correctly.
 
 
-Sample execution and expected output file `packages_report.txt`
+Sample execution with a report file `packages_report.txt`
 ------------------------------------------------
 
 **Note:** The following report is not containing real values from the original [`pacman.txt`](./pacman.txt) file. This is just an example. 
 
 ```
-$ ./pacman-analizer pacman.txt
+$ ./pacman-analizer -input pacman.txt -report packages_report.txt
 Pacman Packages Report
 ----------------------
 - Installed packages : 150
@@ -59,9 +61,7 @@ List of packages
 Test Cases
 ----------
 
-The program will be tested with the following log file:
-
-1. [pacman.txt](./pacman.txt)
+Below the command you can use to test your application.
 ```
-$ ./pacman-analyzer pacman.txt
+$ make test
 ```

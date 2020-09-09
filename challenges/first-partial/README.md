@@ -14,7 +14,6 @@ General Submission Instructions
 
 1. Read and follow the instructions on each of the below exercices:
   - [Pacman Log Analyzer](./pacman-analyzer.md)
-  - [Directory Scanner](./directory-scanner.md)
 
 2. Commit and Push your code to your personal repository.
 
