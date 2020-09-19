@@ -1,9 +1,10 @@
 # build & test automation
 
 build:
+	go get golang.org/x/tour/pic
+	go get golang.org/x/tour/wc
 	go build maps.go
 	go build slices.go
-	go get golang.org/x/tour/pic
 
 test: build
 	@echo Test 1 - maps.go
