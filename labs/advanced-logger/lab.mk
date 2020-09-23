@@ -14,8 +14,8 @@ test: build
 	@echo Test 3
 	./${APP_NAME} 3
 	@echo Test 4 - invalid test
-	./${APP_NAME} 4
-	@echo Test 4 - failed
+	./${APP_NAME} 
+	@echo Test 5 - failed
 	./${APP_NAME}
 
 clean:
