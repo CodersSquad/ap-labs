@@ -34,7 +34,7 @@ int main(int argc, char **argv){
 		break;
 		}
 	} else {
-		errorf("Must have an integer argument to test.");
+		errorf("Must have an integer argument to test. Example ./testLogger 2");
 	}
 
     return 0;
