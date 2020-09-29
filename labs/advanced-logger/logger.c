@@ -57,7 +57,7 @@ int infof(const char *format, ...) {
     if (isLog) {
         printf("Writting to syslog INFO...\n");
         openlog(LOG_FILE, LOG_PID, LOG_USER);
-        syslog(LOG_INFO, format, arg);
+        vsyslog(LOG_INFO, format, arg);
         closelog();
     } else {
         setTerminalColor(RESET, BLUE);
@@ -86,7 +86,7 @@ int warnf(const char *format, ...) {
     if (isLog) {
         printf("Writting to syslog WARN...\n");
         openlog(LOG_FILE, LOG_PID, LOG_USER);
-        syslog(LOG_WARNING, format, arg);
+        vsyslog(LOG_WARNING, format, arg);
         closelog();
     } else {
         setTerminalColor(RESET, YELLOW);
@@ -113,7 +113,7 @@ int errorf(const char *format, ...) {
     if (isLog) {
         printf("Writting to syslog ERROR...\n");
         openlog(LOG_FILE, LOG_PID, LOG_USER);
-        syslog(LOG_ERR, format, arg);
+        vsyslog(LOG_ERR, format, arg);
         closelog();
     } else {
         setTerminalColor(RESET, RED);
@@ -140,7 +140,7 @@ int panicf(const char *format, ...) {
     if (isLog) {
         printf("Writting to syslog PANIC...\n");
         openlog(LOG_FILE, LOG_PID, LOG_USER);
-        syslog(LOG_CRIT, format, arg);
+        vsyslog(LOG_CRIT, format, arg);
         closelog();
     } else {
         setTerminalColor(RESET, MAGENTA);
