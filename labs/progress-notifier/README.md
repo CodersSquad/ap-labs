@@ -19,9 +19,9 @@ Your program should generate a new `input-encoded.txt` file with the result. The
 Decoding
 --------
 ```
-./base64 --decode encoded.txt
+./base64 --decode input-encoded.txt
 ```
-Your program will generate a `decoded.txt` file witg the result.
+Your program will generate a `input-decoded.txt` file witg the result. The decoded file name must have the following naming convention `<input-file>-decoded.txt`.
 
 
 How to test?
