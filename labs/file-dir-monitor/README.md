@@ -12,7 +12,8 @@ When a new subdirectory is added under the tree or a directory is deleted, the s
 **Sample Output**
 ```
 -------------
-Start File/Directory Monitor on /home/cs-user/dir1
+Starting File/Directory Monitor on /home/cs-user/dir1
+-----------------------------------------------------
 - [File - Create] - example.txt
 - [File - Removal] - example.txt
 - [Directory - Create] - subdir
