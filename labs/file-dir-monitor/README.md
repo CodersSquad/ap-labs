@@ -7,6 +7,19 @@ The program should monitor events in all of the subdirectories under the specifi
 To obtain a list of all of these subdirectories, you will need to make use of [nftw()](https://linux.die.net/man/3/nftw).
 When a new subdirectory is added under the tree or a directory is deleted, the set of monitored subdirectories should be updated accordingly.
 
+**Note:** Monitor will only watch until 2nd level of the base directory tree.
+
+**Sample Output**
+```
+-------------
+Start File/Directory Monitor on /home/cs-user/dir1
+- [File - Create] - example.txt
+- [File - Removal] - example.txt
+- [Directory - Create] - subdir
+- [File Create] - example2.txt 
+- [File Rename] - example2.txt -> example3.txt 
+- [File Create] - subdir/example_in_subdir.txt 
+```
 
 General Requirements and Considerations
 ---------------------------------------
