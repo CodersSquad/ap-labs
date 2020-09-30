@@ -34,7 +34,7 @@ ps aux | grep base64
 - Send the signals
 ```
 kill -SIGINT <PID>
-kill -SIGINFO <PID>
+kill -SIGUSR1 <PID>
 ```
 
 General Requirements and Considerations
