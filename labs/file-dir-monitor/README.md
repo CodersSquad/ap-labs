@@ -11,6 +11,7 @@ When a new subdirectory is added under the tree or a directory is deleted, the s
 
 **Sample Output**
 ```
+./monitor $HOME
 Starting File/Directory Monitor on /home/cs-user/dir1
 -----------------------------------------------------
 - [File - Create] - example.txt
@@ -42,10 +43,24 @@ Build and Test automation is already implemented with the following command. Bel
 - Failed compilation or segmentation faults means 0-graded.
 - Failed tests without proper handling  will be properly discounted from total grade.
 
-```
-make test
-```
+Your program will be tested with the following cases:
 
+**Test 1**
+ ```
+ sudo ./monitor /tmp
+ ```
+**Test 2**
+ ```
+./monitor ${HOME}
+```
+**Test 3**
+```
+./monitor $(PWD)
+```
+**Test 4** - failed
+```
+./monitor
+```
 
 How to submit your work and check your submission
 =================================================
