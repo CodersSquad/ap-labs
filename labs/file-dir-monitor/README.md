@@ -55,7 +55,7 @@ Your program will be tested with the following cases:
 ```
 **Test 3**
 ```
-./monitor $(PWD)
+./monitor ${PWD}
 ```
 **Test 4** - failed
 ```
