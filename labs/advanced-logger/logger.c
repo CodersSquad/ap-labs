@@ -20,3 +20,4 @@ int errorf(const char *format, ...) {
 int panicf(const char *format, ...) {
     return 0;
 }
+
