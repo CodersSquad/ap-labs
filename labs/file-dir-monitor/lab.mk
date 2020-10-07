@@ -2,11 +2,15 @@
 
 APP_NAME=monitor
 LIB_NAME=logger
+
+test:
+	bash -c "trap -- '' SIGINT; $(MAKE) test-t"
+
 build:
 	gcc -c ${APP_NAME}.c -o ${APP_NAME}.o
 	gcc -c ${LIB_NAME}.c -o ${LIB_NAME}.o
 	gcc    ${LIB_NAME}.o ${APP_NAME}.o  -o ${APP_NAME}
-test: build
+test-t: build
 	 @echo Test 1
 	sudo ./${APP_NAME} /tmp
 	@echo Test 2
