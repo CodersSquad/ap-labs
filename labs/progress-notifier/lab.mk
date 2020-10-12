@@ -16,8 +16,8 @@ files:
 
 test: build files
 	 @echo Test 1
-	./${APP_NAME} --encode vigilante.txt
-	./${APP_NAME} --decode vigilante-encoded.txt
+	./${APP_NAME} --encode vgilante.txt
+	./${APP_NAME} --decode vgilante-encoded.txt
 	@echo Test 2
 	./${APP_NAME} --encode sick-kid.txt
 	./${APP_NAME} --decode sick-kid-encoded.txt
