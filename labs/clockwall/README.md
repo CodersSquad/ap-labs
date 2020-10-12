@@ -27,9 +27,9 @@ $ TZ=Europe/London  go run clock2.go -port 8030
 ```
 # Starting clockWall client
 $ go run clockWall.go NewYork=localhost:8010 Tokyo=localhost:8020 London=localhost:8030
-US/Eastern    : 12:00:00
-Asia/Tokyo    : 17:00:00
-Europe/London : 02:00:00
+NewYork : 12:00:00
+Tokyo   : 17:00:00
+London  : 02:00:00
 .
 .
 .
