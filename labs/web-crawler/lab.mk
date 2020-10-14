@@ -8,9 +8,9 @@ build:
 
 test: build
 	@echo Test 1
-	./${APP_NAME} -depth=3 -results=test1.txt https://google.com/
+	./${APP_NAME} -depth=2 -results=test1.txt https://google.com/
 	@echo Test 2
-	./${APP_NAME} -depth=2 -results=test2.txt http://www.gopl.io/
+	./${APP_NAME} -depth=3 -results=test2.txt http://www.gopl.io/
 	@echo Test 3
 	./${APP_NAME} -depth=1 -results=test3.txt http://www.gopl.io/
 	@echo Test 4 - failed
