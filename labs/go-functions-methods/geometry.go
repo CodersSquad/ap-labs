@@ -5,7 +5,7 @@
 
 // Package geometry defines simple types for plane geometry.
 //!+point
-package geometry
+package main
 
 import "math"
 
@@ -37,6 +37,9 @@ func (path Path) Distance() float64 {
 		}
 	}
 	return sum
+}
+
+func main() {
 }
 
 //!-path

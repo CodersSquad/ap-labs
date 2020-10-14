@@ -13,7 +13,7 @@ Requirements
 
 | Sub-command         | description                                                                  |
 |---------------------|------------------------------------------------------------------------------|
-| `/users`            | To list all connected users                                                  |
+| `/users`            | To list all connected users and their logging time                           |
 | `/msg <user> <msg>` | To send a direct message to the specified `user`                             |
 | `/time`             | Get IRC Server's localtime                                                   |
 | `/user <user>`      | Get more details about `user` (Username and IP address)                      |
@@ -91,12 +91,14 @@ Sample Sub-Commands output
 --------------------------
 ```
 user1 > /users
-irc-server > user1, user2
+irc-server > user1 - connected since 2020-10-13 10:10:22
+irc-server > user2 - connected since 2020-10-13 10:12:12
+irc-server > user3 - connected since 2020-10-13 10:15:43
 user1 > /msg user2 message to user2    # user2 should receive the direct message "message to user2"
 user1> /time
 irc-server > Local Time: America/Mexico_City 16:53
 user1 > /user user2
-irc-server > username: user2, IP: 192.168.1.22
+irc-server > username: user2, IP: 192.168.1.22 Connected since: 2020-10-13 10:12:12
 ```
 
 Grading

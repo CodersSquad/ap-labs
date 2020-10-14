@@ -15,7 +15,7 @@ General Submission Instructions
 1. Read and follow the instructions on each of the below exercice:
   - [Simple IRC Server](./chat)
 
-2. Commit and Push your code to your personal repository.
+2. Commit and Push your code to your personal repository/branch.
 
 3. Once you're done, follow common lab's sumission process. More details at: [Classify API](../../classify.md)
 
