@@ -3,10 +3,6 @@ Lab - Goroutines vs OS Threads
 Read section 9.8 from The [Go Programming Language](https://www.amazon.com/dp/0134190440/ref=cm_sw_em_r_mt_dp_U_Uz0RDbHAH27PH) book.
 Then, do the 9.4 and 9.5 exercises.
 
-- Update the `README.md` file on instructions about how to run your programs.
-- Your 2 programs must automatically generate their proper  result report depending on what parameters they received.
-- Generated reports are free format and written on any file extension (i.e. .txt, .pdf, .md, .svg, .png, .jpg, .tex)
-
 General Requirements and Considerations
 ---------------------------------------
 - Develop your solutions in the `pipeline.go` (ex. 9.4) and `ping-pong.go` (ex. 9.5) files.
