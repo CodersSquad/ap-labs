@@ -2,7 +2,7 @@ Lab - Matrix Multiplication
 ===========================
 On this lab you will create a multi-threaded matrix multiplicator with the usage of the `pthreads` library. You will see the following concurrent programming concepts:
 
-- Multitheading
+- Multithreading
 - Synchronization mechanisms
 - Race conditions
 
