@@ -3,7 +3,7 @@
 APP_NAME=web-crawler
 
 build:
-	go get .
+	go get gopl.io/ch5/links
 	go build -o ${APP_NAME} ${APP_NAME}.go
 
 test: build
