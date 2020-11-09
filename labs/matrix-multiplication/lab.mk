@@ -3,7 +3,7 @@
 APP_NAME =multiplier
 LIB_NAME =logger
 CC      = gcc
-CFLAGS  = -Wall
+CFLAGS  = -Wall -lpthread
 
 
 data_files:
