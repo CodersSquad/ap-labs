@@ -2,7 +2,7 @@ Lab - Matrix Multiplication
 ===========================
 On this lab you will create a multi-threaded matrix multiplicator with the usage of the `pthreads` library. You will see the following concurrent programming concepts:
 
-- Multitheading
+- Multithreading
 - Synchronization mechanisms
 - Race conditions
 
@@ -11,7 +11,8 @@ General instructions
 --------------------
 
 1. Use the  `multiplier.c` file for your code
-2. Your program should be able to receive one argument which will be know as `NUM_BUFFERS` inside the program (e.g. `./multipler -n 8`).
+2. Your program should be able to receive one argument (`-n`) which will be know as `NUM_BUFFERS` inside the program
+3. An output argument (`-out`) will be required for the `RESULT_MATRIX_FILE`.
 3. You will read a couple of files (`matA.dat`, `matB.dat`) which contain data that will be used for the matrices multiplication. It's an array that represents all matrix's rows in an one-dimension array.
 4. Below some functions that will be required:
    - `long * readMatrix(char *filename)`
@@ -29,7 +30,12 @@ General instructions
    - `long * multiply(long *matA, long *matB)`
      Here's where all the magic happens. Explained in [Matrix multiplication section](#matrix-multiplication)
    - `int saveResultMatrix(long *result)`
-     Saves result matrix into a new `result.dat` file, return 0 for a successful operation, otherwise it will return -1
+     Saves result matrix into a new `RESULT_MATRIX_FILE` file, return 0 for a successful operation, otherwise it will return -1
+   - Your program will be executed as follows:
+
+```
+./multiplier -n 10 -out result.txt
+```
 
 Some key required global variables
 ----------------------------------
@@ -62,6 +68,25 @@ Data files
 `matA.dat` and `matB.dat` are located at:
 - [Classify Share](https://console.cloud.google.com/storage/browser/classify-share)
 
+Below you can see how data can be read/interpreted:
+
+```
+# Data File                 # Matrix Representation
+1                           1   2   3
+2                           4   5   6
+3                           7   8   9
+4
+5
+6
+7
+8
+9
+```
+
+**Note:** `RESULT_MATRIX_FILE` file must be saved on similar format as shown above.
+
+
+
 
 Final Requirements and Considerations
 ---------------------------------------
@@ -73,6 +98,20 @@ Final Requirements and Considerations
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
 
+
+Test Suite
+----------
+Build and Test automation is already implemented with the following command. Below some general tips and comments.
+
+- Make sure that your program passes all test cases without errors.
+- Remember that this is being executed by a robot script.
+- You cannot edit the `lab.mk` file.
+- Failed compilation or segmentation faults means 0-graded.
+- Failed tests without proper handling  will be properly discounted from total grade.
+
+```
+make test
+```
 
 How to submit your work
 =======================

@@ -23,6 +23,19 @@ General Instructions
 - Don't forget to handle errors properly.
 - Coding best practices implementation will be also considered.
 
+Test Suite
+----------
+Build and Test automation is already implemented with the following command. Below some general tips and comments.
+
+- Make sure that your program passes all test cases without errors.
+- Remember that this is being executed by a robot script.
+- You cannot edit the `lab.mk` file.
+- Failed compilation or segmentation faults means 0-graded.
+- Failed tests without proper handling  will be properly discounted from total grade.
+
+```
+make test
+```
 
 How to submit your work
 =======================
