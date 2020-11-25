@@ -17,7 +17,6 @@ import (
 	"log"
 	"os"
 	"strconv"
-
 	"gopl.io/ch5/links"
 )
 
@@ -25,6 +24,7 @@ type pageInfo struct {
 	url   string
 	level int
 }
+
 
 //!+sema
 // tokens is a counting semaphore used to
@@ -46,6 +46,7 @@ func crawl(page pageInfo, reached bool) []pageInfo {
 		}
 	}
 	return found
+
 }
 
 //!-sema

@@ -1,4 +1,4 @@
-CC       = gcc-8
+CC       = gcc
 CFLAGS   = -Wall
 LDFLAGS  = -lm -fopenmp
 OBJFILES = hello.o pi.o pi_mc.o matmul.o prod_cons.o logger.o random.o hello_par.o pi_spmd_simple.o  pi_spmd_final.o pi_loop.o  pi_mc_par.o matmul_par.o prod_cons_par.o
@@ -18,4 +18,5 @@ $(TARGET):  %: %.c logger random
 clean:
 	rm -f $(OBJFILES) $(TARGET) *~
 
-include ../common.mk
+
+include ../../common.mk
