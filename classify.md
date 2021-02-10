@@ -24,7 +24,7 @@ make user
 ➜  dc-labs git:(master) ✗ git config --local classify.github-user demo
 ➜  dc-labs git:(master) ✗ git config --local classify.school-id DEMO1234
 ➜  dc-labs git:(master) ✗ make user
-curl -k -s -X POST -d "githubID=Demo User&name=demo&schoolID=DEMO1234&class=07184303-556d-46ea-ab9d-bd56a9305615" http://localhost:8080/users | jq
+curl -k -s -X POST -d "githubID=Demo User&name=demo&schoolID=DEMO1234&class=07184303-556d-46ea-ab9d-bd56a9305610" http://localhost:8080/users | jq
 {
   "message": "Welcome demo user to the Classify API. Your access token is: 'JDJhJDEwJC5INmZuLy54VmdCeEU1YkRIbDY2ZXVhb0FBclcvMGx5M2hXVkJtWVF1aC9YNG8zUFp6UVo2', save it in the classify.token git local variable",
   "user": {
@@ -32,7 +32,7 @@ curl -k -s -X POST -d "githubID=Demo User&name=demo&schoolID=DEMO1234&class=0718
     "Name": "demo",
     "GithubID": "demo user",
     "SchoolID": "DEMO1234",
-    "ClassID": "07184303-556d-46ea-ab9d-bd56a9305615"
+    "ClassID": "07184303-556d-46ea-ab9d-bd56a9305610"
   }
 }
 ```
