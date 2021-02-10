@@ -4,7 +4,7 @@ GITHUB_USER         ?= demo
 CLASSIFY_ENDPOINT   ?= http://classify.obedmr.com
 CLASSIFY_TOKEN      ?= demo
 CLASSIFY_TOKEN_FILE ?= ${HOME}/.classify_token
-CLASS_ID             = 07184303-556d-46ea-ab9d-bd56a9305615
+CLASS_ID             = 07184303-556d-46ea-ab9d-bd56a9305610
 EXECUTABLES          = curl jq
 
 # Common Submission targets
