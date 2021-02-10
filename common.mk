@@ -4,7 +4,7 @@ GITHUB_USER         ?= demo
 CLASSIFY_ENDPOINT   ?= http://classify.obedmr.com
 CLASSIFY_TOKEN      ?= demo
 CLASSIFY_TOKEN_FILE ?= ${HOME}/.classify_token
-CLASS_ID             = 07184303-556d-46ea-ab9d-bd56a9305610
+CLASS_ID             = 07184303-556d-46ea-ab9d-bd56a9305615
 EXECUTABLES          = curl jq
 
 # Common Submission targets
@@ -15,15 +15,17 @@ submit: deps check-branch
 		git status; \
 		exit -1; \
 	fi
+	@$(eval GITHUB_USER := $(shell git config --local classify.github-user))
+	@$(eval CLASSIFY_TOKEN := $(shell git config --local classify.token))
 	@$(eval USER_ID := $(shell curl -s -k ${CLASSIFY_ENDPOINT}/users\?githubID\=${GITHUB_USER} | jq -r '.users[0].ID'))
 	@$(eval BRANCH := $(shell git rev-parse --abbrev-ref HEAD))
 	@$(eval COMMIT_ID := $(shell git log --format='%H' -n 1))
-	@$(eval CLASSIFY_TOKEN := $(shell [ -f ${CLASSIFY_TOKEN_FILE} ] && cat ${CLASSIFY_TOKEN_FILE} || echo ${CLASSIFY_TOKEN}))
 	@$(eval LAB_ID := $(shell curl -s -k ${CLASSIFY_ENDPOINT}/labs\?ClassID\=${CLASS_ID}\&RepoDir=$$(basename "$$PWD") | jq -r '.labs[0].ID'))
 
 	@curl -k -s -X POST -d "branch=$(BRANCH)&commit=$(COMMIT_ID)&token=$(CLASSIFY_TOKEN)&class=$(CLASS_ID)" $(CLASSIFY_ENDPOINT)/labs/$(USER_ID)/${LAB_ID} | jq
 
 check-submission:
+	@$(eval GITHUB_USER := $(shell git config --local classify.github-user))
 	@$(eval USER_ID := $(shell curl -s -k ${CLASSIFY_ENDPOINT}/users\?githubID\=${GITHUB_USER} | jq -r '.users[0].ID'))
 	@$(eval LAB_ID := $(shell curl -s -k ${CLASSIFY_ENDPOINT}/labs\?ClassID\=${CLASS_ID}\&RepoDir=$$(basename "$$PWD") | jq -r '.labs[0].ID'))
 	@curl -k -s  $(CLASSIFY_ENDPOINT)/labs/$(USER_ID)/${LAB_ID} | jq

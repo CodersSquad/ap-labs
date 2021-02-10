@@ -12,43 +12,61 @@ Classify API Reference
 Create you account in Classify
 ------------------------------
 ```
-GITHUB_USER=<your_user> NAME="<your full name>" SCHOOL_ID=<your_school_id> make user
+git config --local classify.fullname "<Your Full Name>"
+git config --local classify.github-user <you_github_user>
+git config --local classify.school-id <your_school_id>
+make user
 ```
 
 **Example:**
 ```
-➜  ap-labs git:(master) ✗ GITHUB_USER=demo NAME="Demo User" SCHOOL_ID="A00123456" make user
-curl -k -s -X POST -d "githubID=demo&name=Demo User&schoolID=A00123456" http://localhost:8080/users/ | jq
+➜  dc-labs git:(master) ✗ git config --local classify.fullname "Demo User"
+➜  dc-labs git:(master) ✗ git config --local classify.github-user demo
+➜  dc-labs git:(master) ✗ git config --local classify.school-id DEMO1234
+➜  dc-labs git:(master) ✗ make user
+curl -k -s -X POST -d "githubID=Demo User&name=demo&schoolID=DEMO1234&class=07184303-556d-46ea-ab9d-bd56a9305615" http://localhost:8080/users | jq
 {
-  "message": "Welcome demo to the Classify API.",
+  "message": "Welcome demo user to the Classify API. Your access token is: 'JDJhJDEwJC5INmZuLy54VmdCeEU1YkRIbDY2ZXVhb0FBclcvMGx5M2hXVkJtWVF1aC9YNG8zUFp6UVo2', save it in the classify.token git local variable",
   "user": {
-    "ID": "89007637-4441-441c-ad6c-3f576aebb36f",
-    "Name": "Demo User",
-    "GithubID": "demo",
-    "SchoolID": "A00123456"
+    "ID": "7ff75fb6-12ce-4e69-a3b0-1104bd9ce790",
+    "Name": "demo",
+    "GithubID": "demo user",
+    "SchoolID": "DEMO1234",
+    "ClassID": "07184303-556d-46ea-ab9d-bd56a9305615"
   }
 }
 ```
 
+**Don't forget to save your token into the git local configuration**
+```
+git config --local classify.token <your_assigned_very_long_token>
+```
+
+*Example*
+```
+git config --local classify.token JDJhJDEwJC5INmZuLy54VmdCeEU1YkRIbDY2ZXVhb0FBclcvMGx5M2hXVkJtWVF1aC9YNG8zUFp6UVo2
+```
+
+
 Verify that your user exists in Classify
 ----------------------------------------
 ```
-GITHUB_USER=<your_user> make test
+make test
 ```
 
 **Example:**
 ```
-➜  ap-labs git:(master) ✗ GITHUB_USER=demo  make test
+➜  ap-labs git:(master) ✗ make test
 User Information
 curl -k -s http://localhost:8080/users/\?githubID\=demo  | jq
 {
   "message": "List of Users",
   "users": [
     {
-      "ID": "89007637-4441-441c-ad6c-3f576aebb36f",
+      "ID": "7ff75fb6-12ce-4e69-a3b0-1104bd9ce790",
       "Name": "Demo User",
       "GithubID": "demo",
-      "SchoolID": "A00123456"
+      "SchoolID": "DEMO1234"
     }
   ]
 }
@@ -93,5 +111,10 @@ git push myuser my-lab-name
 5. Submit your work to the Classify API. This will notify the professor that your work has been completed.
 Change the `demo` user to your github user account.
 ```
-GITHUB_USER=demo make submit
+make submit
+```
+
+6. Verify that your work is properly submitted to the Classify API
+```
+make check-submission
 ```
