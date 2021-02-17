@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Welcome to the jungle")
+	fmt.Println("Welcome to the jungle - Guns 'N' Roses")
 }
