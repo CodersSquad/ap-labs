@@ -31,7 +31,7 @@ General instructions
 --------------------
 1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
 2. Submit your code to your personal fork.
-3. Use the  `fahrenheit_celsius.c` file for your code.
+3. Use the `fahrenheit_celsius.c` file for your code.
 4. Have fun and don't forget the next section.
 
 
@@ -53,6 +53,6 @@ make test
 How to submit your work
 =======================
 ```
-GITHUB_USER=<your_github_user>  make submit
+make submit
 ```
 More details at: [Classify API](../../classify.md)

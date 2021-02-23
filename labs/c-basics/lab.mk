@@ -1,4 +1,4 @@
-# word-reverser build & test automation
+# build & test automation
 
 build:
 	gcc fahrenheit_celsius.c -o fahrenheit_celsius.o
