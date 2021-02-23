@@ -1,4 +1,4 @@
-# word-reverser build & test automation
+# build & test automation
 
 build:
 	gcc reverser.c -o reverser.o
