@@ -41,4 +41,4 @@ How to submit your work
 ```
 make submit
 ```
-More details at: [Classify API](../../classify.md)
+More details at: [Classify API](../../classify.md#submit-a-lab-to-classify)
