@@ -19,7 +19,6 @@ Requirements
   - `write()`
   - `lseek()`
   - `close()`
-- You're not allowed to use the `getline` function. You will implement you're own `getline` function.
 - You need to follow the output format guidelines.
 - Don't forget to do a proper error handling and reporting
 - [`pacman-analyzer.c`](pacman-analyzer.c) is just a template, it may contain some issues, you must update it to meet with the requirements.
