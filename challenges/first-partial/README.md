@@ -19,10 +19,7 @@ General Submission Instructions
 
 3. Once you're done, follow common lab's sumission process. More details at: [Classify API](../../classify.md)
 ```
-GITHUB_USER=<your_github_account> make submit
-
-# Example:
-GITHUB_USER=obedmr make submit
+make submit
 ```
 
 Grading Policy

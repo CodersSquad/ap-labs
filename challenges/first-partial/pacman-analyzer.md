@@ -12,6 +12,7 @@ Requirements
 - The program must be implemented in C programming language.
 - You program will discover all pacman-managed packages alongside all their active, from installation to removal.
 - Use the `pacman-analyzer.c` template
+- You must use pointer, arrays and structs
 - The solution must use at least 3 of the following system calls:
   - `open()`
   - `read()`
@@ -22,14 +23,14 @@ Requirements
 - You need to follow the output format guidelines.
 - Don't forget to do a proper error handling and reporting
 - [`pacman-analyzer.c`](pacman-analyzer.c) is just a template, it may contain some issues, you must update it to meet with the requirements.
-- [Coding best practices](https://softfire-143705.appspot.com/programming-art/00-names.slide#1) that we learned in class will be reviewed.
+- [Coding best practices](https://talks.obedmr.com/programming-art/00-names.slide#1) that we learned in class will be reviewed.
 - Before submitting you code, make sure it's compiling and running correctly.
 
 
 Sample execution with a report file `packages_report.txt`
 ------------------------------------------------
 
-**Note:** The following report is not containing real values from the original [`pacman.txt`](./pacman.txt) file. This is just an example. 
+**Note:** The following report is not containing real values from the original [`pacman.txt`](./pacman.txt) file. This is just an example.
 
 ```
 $ ./pacman-analizer -input pacman.txt -report packages_report.txt
@@ -39,7 +40,16 @@ Pacman Packages Report
 - Removed packages   : 30
 - Upgraded packages  : 90
 - Current installed  : 120
-
+-------------
+General Stats
+-------------
+- Oldest package               : filesystem
+- Newest package               : python
+- Package with no upgrades     : gcc, glib2, icu, psmic
+- [ALPM-SCRIPTTLET] type count : 1109
+- [ALPM] count                 : 2160
+- [PACMAN] count               : 584
+----------------
 List of packages
 ----------------
 - Package Name        : gcc
