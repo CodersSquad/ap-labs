@@ -1,9 +1,40 @@
 Lab - Generic Merge Sort
 ========================
-On this lab you will be creating a [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) based program for sorting either strings or integers.
 
-As a guide, take a look in the Quick Sort example from the [C Programming Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628) book
-on **Section 5.11 - Pointers to Functions**.
+On this lab you will be creating a [Merge
+Sort](https://en.wikipedia.org/wiki/Merge_sort) based program for
+sorting either strings or integers.
+
+As a guide, take a look in the Quick Sort example from the [C
+Programming
+Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)
+book on **Section 5.11 - Pointers to Functions**.
+
+
+How to run my program
+---------------------
+
+There are a couple of test files for your program
+[`numbers.txt`](./numbers.txt) and
+[`strings.txt`](./strings.txt). Your program will read the files and
+then, perfom the sorting. Below you can see how your program should
+support the 2 types of files.
+
+your program will generate an output file with the `sorted_` prefix name.
+
+- **Sort numbers (`numbers.txt`)**
+```
+# The `-n` is notifying the program that you're sorting a numbers file.
+$ ./generic_merge_sort -n numbers.txt -o sorted_numbers.txt
+Results file can be found at ./sorted_numbers.txt
+```
+
+- **Sort strings (`strings.txt`)**
+```
+$ ./generic_merge_sort strings.txt
+Results file can be found at ./sorted_strings.txt
+```
+
 
 General instructions
 --------------------
@@ -29,6 +60,6 @@ make test
 How to submit your work
 =======================
 ```
-GITHUB_USER=<your_github_user>  make submit
+make submit
 ```
 More details at: [Classify API](../../classify.md)

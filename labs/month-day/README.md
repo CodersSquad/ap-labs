@@ -9,7 +9,7 @@ Modify the provided `month_day.c` file to receive the parameters in the way and 
 ```
 # ./month_day <year> <yearday>
 # Example for Feb 2nd, 2019:
-./month_day 2019 33
+\$ ./month_day 2019 33
 Feb 02, 2019
 ```
 
