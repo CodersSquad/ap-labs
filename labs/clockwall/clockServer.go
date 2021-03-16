@@ -1,4 +1,4 @@
-// Clock2 is a concurrent TCP server that periodically writes the time.
+// Clock Server is a concurrent TCP server that periodically writes the time.
 package main
 
 import (
