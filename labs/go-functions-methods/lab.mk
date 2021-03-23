@@ -10,7 +10,7 @@ test: build
 	./geometry 4
 	@echo Test 3 - 8 points
 	./geometry 8
-	@echo Test 3 - 12 points
+	@echo Test 4 - 12 points
 	./geometry 12
 
 clean:
