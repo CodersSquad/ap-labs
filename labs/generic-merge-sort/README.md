@@ -25,7 +25,7 @@ your program will generate an output file with the `sorted_` prefix name.
 - **Sort numbers (`numbers.txt`)**
 ```
 # The `-n` is notifying the program that you're sorting a numbers file.
-$ ./generic_merge_sort -n numbers.txt -o sorted_numbers.txt
+$ ./generic_merge_sort -n numbers.txt
 Results file can be found at ./sorted_numbers.txt
 ```
 
