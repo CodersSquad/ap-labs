@@ -29,6 +29,6 @@ General instructions
 How to submit your work
 =======================
 ```
-GITHUB_USER=<your_github_user>  make submit
+make submit
 ```
 More details at: [Classify API](../../classify.md)
