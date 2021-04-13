@@ -1,5 +1,5 @@
 Lab - File/Directory Monitor
-================================
+============================
 
 Write a program that logs all file creations, deletions, and renames under the directory named in its command-line argument.
 The program should monitor events in all of the subdirectories under the specified directory.
@@ -17,9 +17,9 @@ Starting File/Directory Monitor on /home/cs-user/dir1
 - [File - Create] - example.txt
 - [File - Removal] - example.txt
 - [Directory - Create] - subdir
-- [File Create] - example2.txt 
-- [File Rename] - example2.txt -> example3.txt 
-- [File Create] - subdir/example_in_subdir.txt 
+- [File Create] - example2.txt
+- [File Rename] - example2.txt -> example3.txt
+- [File Create] - subdir/example_in_subdir.txt
 ```
 
 General Requirements and Considerations
@@ -43,33 +43,24 @@ Build and Test automation is already implemented with the following command. Bel
 - Failed compilation or segmentation faults means 0-graded.
 - Failed tests without proper handling  will be properly discounted from total grade.
 
-Your program will be tested with the following cases:
+Your program will be tested with the following commands:
 
-**Test 1**
- ```
- sudo ./monitor /tmp
- ```
-**Test 2**
- ```
-./monitor ${HOME}
 ```
-**Test 3**
+make test1
+make test2
+make test3
+make test4
 ```
-./monitor ${PWD}
-```
-**Test 4** - failed
-```
-./monitor
-```
+
 
 How to submit your work and check your submission
 =================================================
 ```
 # Submit
-GITHUB_USER=<your_github_user> make submit
+make submit
 
 # Check Submission
-GITHUB_USER=<your_github_user> make check-submission
+make check-submission
 ```
 
 More details about Classify API : [Classify](../../classify.md)
