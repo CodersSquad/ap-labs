@@ -56,7 +56,6 @@ Build and Test automation is already implemented with the following command. Bel
 - You cannot edit the `lab.mk` file.
 - Failed compilation or segmentation faults means 0-graded.
 - Failed tests without proper handling  will be properly discounted from total grade.
-
 ```
 make test
 ```
@@ -69,10 +68,10 @@ How to submit your work and check your submission
 make clean
 
 # Submit
-GITHUB_USER=<your_github_user> make submit
+make submit
 
 # Check Submission
-GITHUB_USER=<your_github_user> make check-submission
+make check-submission
 ```
 
 More details about Classify API : [Classify](../../classify.md)
