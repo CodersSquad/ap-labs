@@ -23,10 +23,10 @@ How to submit your work and check your submission
 =================================================
 ```
 # Submit
-GITHUB_USER=<your_github_user> make submit
+make submit
 
 # Check Submission
-GITHUB_USER=<your_github_user> make check-submission
+make check-submission
 ```
 
 More details about Classify API : [Classify](../../classify.md)
