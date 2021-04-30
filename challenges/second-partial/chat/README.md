@@ -115,6 +115,7 @@ user1 > Hi all
 irc-server > New connected user [user2]
 user2 > &@*^
 irc-server > [user2] was kicked from channel for bad language policy violation
+^C
 ```
 
 Sub-Commands output
