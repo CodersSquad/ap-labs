@@ -13,23 +13,32 @@ Requirements
 
 | Sub-command         | description                                                                  |
 |---------------------|------------------------------------------------------------------------------|
-| `/users`            | To list all connected users and their logging time                           |
-| `/msg <user> <msg>` | To send a direct message to the specified `user`                             |
-| `/time`             | Get IRC Server's localtime                                                   |
-| `/user <user>`      | Get more details about `user` (Username and IP address)                      |
-| `/kick <user>`      | To kick (remove) an `user` from the channel (only channel ADMIN can do this) |
+| `/users`            | Lists all connected users and their logging time                             |
+| `/msg <user> <msg>` | Sends a direct message to the specified `user`                               |
+| `/time`             | Provides IRC Server's localtime                                              |
+| `/user <user>`      | Displays more details about `user` (Username and IP address)                 |
+| `/kick <user>`      | Kicks (removes) an `user` from the channel (only channel ADMIN can do this)  |
 
 - You need to follow the output format guidelines.
+- Your program is going to be semi-automatically tested, make sure that you follow the command line conventions
 - Coding best practices that we learned in class will be reviewed.
 - Before submitting you code, make sure it's compiling and running correctly.
 
 
-Sample IRC Server output
-------------------------
+Sample Scenario with 1 Server and 3 clients
+-------------------------------------------
 
+
+### Server
+
+- Command to start the IRC Server
+```
+go run server.go -host localhost -port 9000
+```
+
+- IRC Server Output
 
 ```
-# go run server.go -host localhost -port 9000
 irc-server > Simple IRC Server started at localhost:9000
 irc-server > Ready for receiving new clients
 irc-server > New connected user [user1]
@@ -40,11 +49,17 @@ irc-server > [user2] was kicked
 irc-server > [user3] left
 ```
 
-Sample 3 IRC clients test scenario
-----------------------------------
-- `user1` session
+### `user1` session
+
+- Command to start the `user1` client session
+
 ```
-# go run client.go -user user1 -server localhost:9000
+go run client.go -user user1 -server localhost:9000
+```
+
+- Client `user1` session output
+
+```
 irc-server > Welcome to the Simple IRC Server
 irc-server > Your user [user1] is successfully logged
 irc-server > Congrats, you were the first user.
@@ -60,9 +75,17 @@ irc-server > [user3] left channel
 user1 >
 ```
 
-- `user2` session
+### `user2` session
+
+- Command to start the `user2` client session
+
 ```
-# go run client.go -user user2 -server localhost:9000
+go run client.go -user user2 -server localhost:9000
+```
+
+- Client `user2` session output
+
+```
 irc-server > Welcome to the Simple IRC Server
 irc-server > Your user [user2] is successfully logged
 user2 >
@@ -74,9 +97,17 @@ irc-server > Bad language is not allowed on this channel
 
 ```
 
-- `user3` session
+### `user3` session
+
+- Command to start the `user3` client session
+
 ```
-# go run client.go -user user3 -server localhost:9000
+go run client.go -user user3 -server localhost:9000
+```
+
+- Client `user3` session output
+
+```
 irc-server > Welcome to the Simple IRC Server
 irc-server > Your user [user3] is successfully logged
 user3 >
@@ -84,11 +115,12 @@ user1 > Hi all
 irc-server > New connected user [user2]
 user2 > &@*^
 irc-server > [user2] was kicked from channel for bad language policy violation
-^C
 ```
 
-Sample Sub-Commands output
---------------------------
+Sub-Commands output
+-------------------
+The following commands can be executed in all clients.
+
 ```
 user1 > /users
 irc-server > user1 - connected since 2020-10-13 10:10:22
