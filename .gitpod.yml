@@ -1,8 +1,7 @@
 tasks:
-  - name: Create personal remote
-    init: git remote add ${GITHUB_USER} https://github.com/${GITHUB_USER}/ap-labs.git
-  - name: Set Classify Configuration
+  - name: Setup Classify API requirements
     init: |
+      git remote add ${GITHUB_USER} https://github.com/${GITHUB_USER}/ap-labs.git
       git config --global user.name "${FULLNAME}"
       git config --global user.email "${TEC_EMAIL}"
       git config --local classify.fullname "${FULLNAME}"
