@@ -7,7 +7,7 @@ tasks:
       git config --global user.email "${TEC_EMAIL}"
       git config --local classify.fullname "${FULLNAME}"
       git config --local classify.github-user "${CLASSIFY_GITHUB_USER}"
-      git config --local classify.token ${CLASSIFY_GITHUB_TOKEN}
+      git config --local classify.token ${CLASSIFY_TOKEN}
       git config --local --list | grep classify
     
     
