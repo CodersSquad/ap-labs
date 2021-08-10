@@ -1,0 +1,3 @@
+tasks:
+  - name: Create personal remote
+    init: git remote add ${GITHUB_USER} https://github.com/${GITHUB_USER}/ap-labs.git
