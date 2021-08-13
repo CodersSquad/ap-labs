@@ -2,10 +2,7 @@ tasks:
   - name: Setup Classify API requirements
     init: |
       git remote add ${GITHUB_USER} https://github.com/${GITHUB_USER}/ap-labs.git
-      git config --global user.name "${FULLNAME}"
-      git config --global user.email "${TEC_EMAIL}"
-      git config --local classify.fullname "${FULLNAME}"
-      git config --local classify.github-user "${CLASSIFY_GITHUB_USER}"
+      git config --local classify.github-user "${GITHUB_USER}"
       git config --local classify.token ${CLASSIFY_TOKEN}
     
     
