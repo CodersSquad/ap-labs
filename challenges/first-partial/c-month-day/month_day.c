@@ -10,10 +10,10 @@ static char daytab[2][12] = {
 };
 
 static char *months[12] = {
-    "January", "February", "March",
-    "April", "May", "June",
-    "July", "August", "September",
-    "October", "November", "December"
+    "Jan", "Feb", "Mar",
+    "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep",
+    "Oct", "Nov", "Dec"
 };
 
 int main(int argc, char **argv) {
