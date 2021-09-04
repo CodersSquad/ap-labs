@@ -1,5 +1,6 @@
-Lab - Functions and Methods in Go
-=================================
+Functions and Methods in Go
+===========================
+
 Modfify the [geometry.go](./geometry.go) source code file and add the
 following features. The idea is to calculate the perimeter of the
 image.
