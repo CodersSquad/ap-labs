@@ -26,13 +26,11 @@ int main(int argc, char **argv) {
         if(pmonth != -1){
             printf("%s %d, %s\n", months[pmonth], pday, argv[1]);
         }else{
-            printf("Not a valid date\n");
             return 0;
         } 
         return 0;
     }
-    printf("Not enough arguments\n");
-    return -1;
+    return 0;
 }
 
 //year and yearday are from argv
