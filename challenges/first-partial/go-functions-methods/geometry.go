@@ -15,16 +15,24 @@ import (
 	"strconv"
 )
 
-type Point struct{ X, Y float64 }
+type Point struct{ x, y float64 }
+
+func (p Point) X() float64{
+	return p.x
+}
+
+func (p Point) Y() float64{
+	return p.y
+}
 
 // traditional function
 func Distance(p, q Point) float64 {
-	return math.Hypot(q.X-p.X, q.Y-p.Y)
+	return math.Hypot(q.X() -p.X(), q.Y()-p.Y())
 }
 
 // same thing, but as a method of the Point type
 func (p Point) Distance(q Point) float64 {
-	return math.Hypot(q.X-p.X, q.Y-p.Y)
+	return math.Hypot(q.X()-p.X(), q.Y()-p.Y())
 }
 
 // A Path is a journey connecting the points with straight lines.
@@ -36,11 +44,17 @@ func (path Path) Distance() float64 {
 	for i := range path {
 		if i > 0 {
 			sum += path[i-1].Distance(path[i])
-			fmt.Printf("%v + ", path[i-1].Distance(path[i]))
+			if i < len(path) - 1 {
+				fmt.Printf("%v + ", path[i-1].Distance(path[i]))
+			}else{
+				fmt.Printf("%v ", path[i-1].Distance(path[i]))
+			}
 		}
 	}
 	return sum
 }
+
+
 
 //!-point
 func generatePoint() (float64, float64) {
@@ -80,7 +94,7 @@ func validateSegments(x, y, n int) {
 
 		if !intersects {
 			points[i] = p
-			fmt.Printf(" - (  %v,   %v)\n", p.X, p.Y)
+			fmt.Printf(" - (  %v,   %v)\n", p.X(), p.Y())
 			i++
 		}
 	}
@@ -94,15 +108,15 @@ func validateSegments(x, y, n int) {
 
 func onSegment(p Point, q Point, r Point) bool {
 
-	if q.X <= math.Max(p.X, r.X) && q.X >= math.Min(p.X, r.X) &&
-		q.Y <= math.Max(p.Y, r.Y) && q.Y >= math.Min(p.Y, r.Y) {
+	if q.X() <= math.Max(p.X(), r.X()) && q.X() >= math.Min(p.X(), r.X()) &&
+		q.Y() <= math.Max(p.Y(), r.Y()) && q.Y() >= math.Min(p.Y(), r.Y()) {
 		return true
 	}
 	return false
 }
 
 func orientation(p Point, q Point, r Point) int {
-	val := (q.Y-p.Y)*(r.X-q.X) - (q.X-p.X)*(r.Y-q.Y)
+	val := (q.Y()-p.Y())*(r.X()-q.X()) - (q.X()-p.X())*(r.Y()-q.Y())
 
 	if val == 0 {
 		return 0
