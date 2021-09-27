@@ -10,12 +10,12 @@ build:
 	gcc ${APP_NAME}.o ${LIB_NAME}.o -o ${EXE_NAME}.o
 test: build
 	@echo Test 1 - addition
-	./${EXE_NAME}.o -add "Initial String " "This is the rest to be added"
+	./${EXE_NAME}.o -add "Initial String " "This is the rest to be added" || true
 	@echo Test 2 - find
-	./${EXE_NAME}.o -find "This is a super long string" "super long"
+	./${EXE_NAME}.o -find "This is a super long string" "super long" || true
 	@echo Test 3 - failed addition
-	./${EXE_NAME}.o -add "Initial String"
+	./${EXE_NAME}.o -add "Initial String" || true
 	@echo Test 4 - failed find
-	./${EXE_NAME}.o -find "This is my super long string"
+	./${EXE_NAME}.o -find "This is my super long string" || true
 clean:
 	rm -rf *.o
