@@ -1,9 +1,17 @@
-Lab - Generic Merge Sort
-========================
+Lab - Generic Sort
+==================
 
-On this lab you will be creating a [Merge
-Sort](https://en.wikipedia.org/wiki/Merge_sort) based program for
-sorting either strings or integers.
+On this lab you will be creating a generic sort solution that will be
+able to sort either numbers or strings. Your program will also support
+2 types of sorting algorithms:
+
+- [MergeSort](https://en.wikipedia.org/wiki/Merge_sort)
+- [QuickSort](https://en.wikipedia.org/wiki/Quicksort)
+
+The objective of this exercise is to practice pointers and also
+experiment with pointers to functions. You will need to modify the
+provided `*.c` files in order to add support for both sorting
+algorithms (quicksort and mergesort).
 
 As a guide, take a look in the Quick Sort example from the [C
 Programming
@@ -25,14 +33,16 @@ your program will generate an output file with the `sorted_` prefix name.
 - **Sort numbers (`numbers.txt`)**
 ```
 # The `-n` is notifying the program that you're sorting a numbers file.
-$ ./generic_merge_sort -n numbers.txt
-Results file can be found at ./sorted_numbers.txt
+$ ./genericsort -n numbers.txt -quicksort -o qs_sorted_numbers.txt
+... sorting numbers.txt file with quicksort
+... Results file can be found at ./qs_sorted_numbers.txt
 ```
 
 - **Sort strings (`strings.txt`)**
 ```
-$ ./generic_merge_sort strings.txt
-Results file can be found at ./sorted_strings.txt
+$ ./genericsort strings.txt -mergesort -o ms_sorted_strings.txt
+... sorting strings.txt file with mergesort
+... Results file can be found at ./ms_sorted_strings.txt
 ```
 
 
@@ -40,8 +50,9 @@ General instructions
 --------------------
 1. Don't forget to sync first with the base [master](https://github.com/CodersSquad/ap-labs) branch.
 2. Push your code to your personal fork.
-3. Use the  `generic_merge_sort.c` file for your code.
-4. Have fun and don't forget the following section.
+3. You can only edit the `genericsort.c`, `quicksort.c` and `mergesort.c` files
+4. Don't modify the `mergesort` and `quicksort` functions parameters
+5. Have fun and don't forget the following section.
 
 Test Suite
 ----------
