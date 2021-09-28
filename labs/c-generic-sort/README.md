@@ -31,14 +31,19 @@ support the 2 types of files.
 your program will generate an output file with the `sorted_` prefix name.
 
 - **Sort numbers (`numbers.txt`)**
+  - The `-n` is notifying the program that you're sorting a numbers file
+  - The `-quicksort` argument indicates which sorting algorithm will be used
+  - The `-o` argument provides the output file
 ```
-# The `-n` is notifying the program that you're sorting a numbers file.
 $ ./genericsort -n numbers.txt -quicksort -o qs_sorted_numbers.txt
 ... sorting numbers.txt file with quicksort
 ... Results file can be found at ./qs_sorted_numbers.txt
 ```
 
 - **Sort strings (`strings.txt`)**
+  - If no `-n`, it means it will see the input file as strings file
+  - The `-mergesort` argument indicates which sorting algorithm will be used
+  - The `-o` argument provides the output file
 ```
 $ ./genericsort strings.txt -mergesort -o ms_sorted_strings.txt
 ... sorting strings.txt file with mergesort
