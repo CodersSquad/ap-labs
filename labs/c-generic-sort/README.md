@@ -28,8 +28,6 @@ There are a couple of test files for your program
 then, perfom the sorting. Below you can see how your program should
 support the 2 types of files.
 
-your program will generate an output file with the `sorted_` prefix name.
-
 - **Sort numbers (`numbers.txt`)**
   - The `-n` is notifying the program that you're sorting a numbers file
   - The `-quicksort` argument indicates which sorting algorithm will be used
