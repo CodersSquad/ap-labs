@@ -10,16 +10,16 @@ build:
 
 test1: build
 	 @echo Test 1
-	sudo ./${APP_NAME} /tmp
+	sudo ./${APP_NAME} /tmp || true
 test2: build
 	@echo Test 2
-	./${APP_NAME} ${HOME}
+	./${APP_NAME} ${HOME} || true
 test3: build
 	@echo Test 3
-	./${APP_NAME} $(PWD)
+	./${APP_NAME} $(PWD) || true
 test4: build
 	@echo Test 4 - failed
-	./${APP_NAME}
+	./${APP_NAME} || true
 
 clean:
 	rm -rf *.o ${APP_NAME}

@@ -2,20 +2,20 @@
 
 APP_NAME=testLogger
 LIB_NAME=logger
-EXE_NAME=main
+EXEC_NAME=main
 
 build:
 	gcc -c ${APP_NAME}.c -o ${APP_NAME}.o
 	gcc -c ${LIB_NAME}.c -o ${LIB_NAME}.o
-	gcc ${APP_NAME}.o ${LIB_NAME}.o -o ${EXE_NAME}.o
+	gcc ${APP_NAME}.o ${LIB_NAME}.o -o ${EXEC_NAME}
 test: build
 	@echo Test 1 - default
-	./${EXE_NAME}.o 1
+	./${EXEC_NAME} 1 || true
 	@echo Test 2 - stdout
-	./${EXE_NAME}.o 2
+	./${EXEC_NAME} 2 || true
 	@echo Test 3 - syslog
-	./${EXE_NAME}.o 3
+	./${EXEC_NAME} 3 || true
 	@echo Test 4 - Invalid case
-	./${EXE_NAME}.o 4
+	./${EXEC_NAME} 4 || true
 clean:
-	rm -rf *.o
+	rm -rf *.o ${EXEC_NAME}

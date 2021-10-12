@@ -1,11 +1,14 @@
 Lab - ClockWall
 ===================
 
-Modify the [clock2.go](./clock2.go) to accept the `-port` parameter and write a program [clockWall.go](clockWall.go)
-that acts as a client of several clock servers at once.
+Modify the [serverClock.go](./serverClock.go) to accept the `-port` parameter
+and write a program [clockWall.go](clockWall.go) that acts as a client
+of several clock servers at once.
 
-It will read  the times from each one and displaying the results in a table.
-If you have access to geographically distributed computers, run instances remotely; otherwise run local instances on different ports with fake time zones.
+It will read the times from each one and displaying the results in a
+table.  If you have access to geographically distributed computers,
+run instances remotely; otherwise run local instances on different
+ports with fake time zones.
 
 
 How to run your program
@@ -35,6 +38,10 @@ US/Eastern    : 12:00:00
 Asia/Tokyo    : 17:00:00
 Europe/London : 02:00:00
 ```
+
+Please remember that your program should support any number of clock
+servers, keep this in mind and perform some tests with more than the
+suggested 3 clock servers.
 
 General Requirements and Considerations
 ---------------------------------------
