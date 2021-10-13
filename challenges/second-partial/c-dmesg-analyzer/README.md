@@ -18,6 +18,7 @@ Requirements
   - `write()`
   - `lseek()`
   - `close()`
+- Don't forget to handle errors properly
 - You need to follow the output format guidelines.
 - [Coding best practices](https://softfire-143705.appspot.com/programming-art/00-names.slide#1) that we learned in class will be reviewed.
 - Before submitting you code, make sure it's compiling and running correctly.
@@ -26,7 +27,7 @@ Requirements
 Sample Execution
 ----------------
 ```
-./dmesg-analizer.o dmesg.txt
+./dmesg-analizer dmesg.txt
 ```
 
 

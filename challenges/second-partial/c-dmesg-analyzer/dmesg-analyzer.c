@@ -7,7 +7,7 @@ void analizeLog(char *logFile, char *report);
 int main(int argc, char **argv) {
 
     if (argc < 2) {
-	printf("Usage:./dmesg-analizer.o logfile.txt\n");
+	printf("Usage:./dmesg-analizer logfile.txt\n");
 	return 1;
     }
 

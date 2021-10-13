@@ -13,7 +13,7 @@ General Submission Instructions
 --------------------
 
 1. Read and follow the instructions on each of the below exercice:
-  - [Simple IRC Server](./chat)
+  - [DMESG Analyzer](./dmesg-analyzer)
 
 2. Commit and Push your code to your personal repository/branch.
 
@@ -22,6 +22,9 @@ General Submission Instructions
 How to submit your work and check your submission
 =================================================
 ```
+# Move to the dmesg-analyzer directory
+cd dmesg-analyzer
+
 # Submit
 make submit
 
