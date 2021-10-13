@@ -13,7 +13,7 @@ General Submission Instructions
 --------------------
 
 1. Read and follow the instructions on each of the below exercice:
-  - [DMESG Analyzer](./dmesg-analyzer)
+  - [DMESG Analyzer](./c-dmesg-analyzer)
 
 2. Commit and Push your code to your personal repository/branch.
 
