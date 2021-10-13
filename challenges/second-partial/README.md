@@ -23,7 +23,7 @@ How to submit your work and check your submission
 =================================================
 ```
 # Move to the dmesg-analyzer directory
-cd dmesg-analyzer
+cd c-dmesg-analyzer
 
 # Submit
 make submit
