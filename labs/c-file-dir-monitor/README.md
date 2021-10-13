@@ -22,7 +22,7 @@ notified but not monitored.
 **Sample Output**
 ```
 ./monitor $HOME
-Starting File/Directory Monitor on /home/cs-user/dir1
+Starting File/Directory Monitor on /home/cs-user
 -----------------------------------------------------
 - [File - Create] - example.txt
 - [File - Removal] - example.txt
