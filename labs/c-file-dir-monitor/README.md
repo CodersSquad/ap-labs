@@ -34,8 +34,6 @@ Starting File/Directory Monitor on /home/cs-user
 
 General Requirements and Considerations
 ---------------------------------------
-- Use the logger that was done on [advanced-logger](https://github.com/CodersSquad/ap-labs/tree/master/labs/c-advanced-logger).
-- `printf` function calls are not allowed, use your logger.
 - Use the `inotify` [API](http://man7.org/linux/man-pages/man7/inotify.7.html).
 - Use the `monitor.c` file for implementing the lab's general flow.
 - (Optional) Use the `Makefile` for compilation
