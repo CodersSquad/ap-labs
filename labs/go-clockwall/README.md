@@ -55,6 +55,7 @@ Useful links
 ------------
 - https://yourbasic.org/golang/time-change-convert-location-timezone/
 - https://golang.org/pkg/flag/
+- https://gobyexample.com/environment-variables
 
 
 Test Suite
