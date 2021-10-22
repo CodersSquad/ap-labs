@@ -22,8 +22,7 @@ General Submission Instructions
 How to submit your work and check your submission
 =================================================
 ```
-# Move to the dmesg-analyzer directory
-cd c-dmesg-analyzer
+# First, make sure that you're located in the `second-partial` directory
 
 # Submit
 make submit
