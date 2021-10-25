@@ -11,6 +11,8 @@ Classify API Reference
 
 Create you account in Classify
 ------------------------------
+**Important:** 
+The following instructions are meant to be executed only the first time you join the Classify API, later, you will only run `make submit` for your labs submissions.
 ```
 git config --local classify.fullname "<Your Full Name>"
 git config --local classify.github-user <you_github_user>
