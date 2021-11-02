@@ -62,7 +62,7 @@ Grading Policy
 | Presentation                 | 20%   |
 | TOTAL                        | 100%  |
 
-- **Extra 15% bonus**
+- **Free Bonus Lab**
 
   You can get an extra bonus if you implement an Artificial Intelligence algorithm in enemies behaviour
   for finding the main snake location, trace the route and follow it.

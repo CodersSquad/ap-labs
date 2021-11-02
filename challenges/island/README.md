@@ -59,7 +59,7 @@ Grading Policy
 | Presentation                 | 20%   |
 | TOTAL                        | 100%  |
 
-- **Extra 15% bonus**
+- **Free Lab Bonus**
 
   You can get an extra bonus if you implement an Artificial Intelleigence algorithm for detecting lakes formation.
   Ask for more details about this requirement.

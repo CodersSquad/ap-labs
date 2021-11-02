@@ -58,7 +58,7 @@ Grading Policy
 | Presentation                 | 20%   |
 | TOTAL                        | 100%  |
 
-- **Extra 15% bonus**
+- **Free Lab Bonus**
 
   You can get an extra bonus if you implement an Artificial Intelligence algorithm in space invaders behaviour
   for finding the main shooter location, trace the route and follow it.

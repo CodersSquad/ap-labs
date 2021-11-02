@@ -57,7 +57,7 @@ Grading Policy
 | Presentation                 | 20%   |
 | TOTAL                        | 100%  |
 
-- **Extra 15% bonus**
+- **Free Lab Bonus**
 
   You can get an extra bonus if you implement an intelligent mechanism to avoid being overrun when
   a racer tries to pass another racer.
