@@ -3,20 +3,71 @@
 #include <conio.h>
 #include <windows.h>
 #include <time.h> //time()
+//this definintion ENEMY_QUANTITY in 80 
+#define ENEMY_QUANTITY 80
 
-int main()
+//this object is used to store the position of the a enemy and wheter it is alive or not
+struct enemy
 {
+    int x;
+    int y;
+    int alive;
+}def_enemy = {-1, -1, 1};
+
+//this method will recieve a array of enemies and coordinates and return the enemy object from the enemy array
+struct enemy *getEnemy(struct enemy *enemies, int x, int y)
+    {
+        //this variable is used to store the index of the enemy in the array
+        int index = 0;
+        //this variable is used to store the enemy object
+        struct enemy *enemy = NULL;
+        //this loop will iterate through the enemies array
+        for (int i = 0; i < ENEMY_QUANTITY; i++)
+        {
+            //this if statement will check if the enemy is alive
+            if (enemies[i].alive == 1)
+            {
+                //this if statement will check if the enemy is in the same position as the coordinates
+                if (enemies[i].x == x && enemies[i].y == y)
+                {
+                    //this variable is used to store the index of the enemy in the array
+                    index = i;
+                    //this variable is used to store the enemy object
+                    enemy = &enemies[index];
+                    //this break statement will break the loop
+                    break;
+                }
+            }
+        }
+        //this return statement will return the enemy object
+        return enemy;
+    }
+
+//ths function will recieve a enemy and return a String with x and y of the enemy and wheter it is alive or not
+//the function will return a string with the following format:
+//"x:y:alive"
+char* enemy_to_string(struct enemy e){
+    char* str = (char*)malloc(sizeof(char)*10);
+    sprintf(str, "%d:%d:%d", e.x, e.y, e.alive);
+    return str;
+}
+
+int main(){
+    //this variable is used to store enemys is an array.
+    struct enemy enemies[ENEMY_QUANTITY];
+    
+    
     int sizey = 23;
     int sizex = 40;
     int x, y, yi;
-    char world[sizey][sizex];
-    char player = 'A';
-    char playerLaser = '^';
-    char enemy = 'M';
-    char enemyShielded = 'O';
-    char enemyLaser = 'U';
-    char explosion = 'X';
-    int score = 0;
+    char world[sizey][sizex]; 
+    char player = 'A'; //A is the player
+    char playerLaser = '^'; //^ is the player's laser
+    char enemy = 'M'; //M is the enemy
+    char enemyShielded = 'O'; //O is the enemy's shielded
+    char enemyLaser = 'U'; //U is the enemy's laser
+    char explosion = 'X'; //X is the explosion
+    int score = 0; 
     int victory = 1;
     int laserReady = 1;
     int enemyReady = 0;
@@ -25,49 +76,53 @@ int main()
 
     /*welcome screen*/
     printf("\n \n     Welcome soldier! \n \n \n \n");
-    Sleep(1000);
+    Sleep(10);
     printf("  Brave the COMMAND PROMPT INVADERS and come back a hero. \n \n \n \n");
-    Sleep(2500);
+    Sleep(10);
     printf("  Your operating system is depending upon you. \n \n \n \n");
-    Sleep(2500);
+    Sleep(10);
     printf("               Good luck.");
-    Sleep(1000);
+    Sleep(10);
     printf("\n \n \n \n Press any key to start.");
     getch();
 
     /*initialise world*/
-    int totalEnemies = 0;
-    //for each space
-    for (x = 0; x < sizex; x ++) {
-        for (y = 0; y < sizey; y ++) {
-            //If y is not pair, y is less than 7, x is more than 4, x is less than sizex - 5 and x is pair. 
-            //The space is limited to the world.
-            if ((y+1) % 2 == 0 && y < 7 && x > 4
-            && x < sizex - 5 && x % 2 ==0) {
-                world[y][x] = enemy;
-                totalEnemies ++;
-            }
-            else if ((y+1) % 2 == 0 && y >= 7 && y < 9 && x > 4
-            && x < sizex - 5 && x % 2 ==0){
-                world[y][x] = enemyShielded;
-                totalEnemies = totalEnemies + 2;
-            }
-            else {
-                world[y][x] = ' ';
-            }
+    int totalEnemies = 0; //Variable to store the total number of enemies. ****Currently obsolete****
+    
+    //initialise the enemys array with enemies with coordinates between sizex and sizey-10
+    for (int i = 0; i < ENEMY_QUANTITY; i++)
+    {
+        enemies[i].x = rand() % (sizex) + 1;
+        enemies[i].y = rand() % (sizey - 10) + 1;
+        enemies[i].alive = 1;
+        totalEnemies++;
+    }
+    //initialise the world with empty spaces
+    for (y = 0; y < sizey; y++){
+        for (x = 0; x < sizex; x++){
+            world[y][x] = ' ';
         }
     }
+    //iterate enemys array and write the enemies in the world else write a space
+    for (int i = 0; i < ENEMY_QUANTITY; i++)
+    {
+        if (enemies[i].alive == 1)
+        {
+            world[enemies[i].y][enemies[i].x] = enemy;
+        }
+    }
+    
     world[sizey - 1][sizex / 2] = player;
-    int i = 1;
+    int i = 1;                            //al chile no sé que es eso
     char direction = 'l';
     char keyPress;
-    int currentEnemies = totalEnemies;
+    int currentEnemies = ENEMY_QUANTITY;
     while(currentEnemies > 0 && victory) {
         int drop = 0;
         int enemySpeed = 1 + 10 * currentEnemies / totalEnemies;
         laserReady ++;
 
-        /*display world*/
+        //handling world, score and enemies
         system("cls");
         printf("SCORE:    %d", score);
         printf("\n");
@@ -80,24 +135,32 @@ int main()
             printf("\n");
             }
 
-        /*laser time*/
+        //handling enemy projectile
         for (x = 0; x < sizex; x ++) {
             for (y = sizey-1; y >= 0; y --) {
-                if (i%2 == 0 && world[y][x] == enemyLaser
-                && (world[y+1][x] != enemy & world[y+1][x] != enemyShielded)){
-                world[y+1][x] = enemyLaser;
-                world[y][x] = ' ';
+                //if there is no enemy or enemyShielded below the position of the enemy projectile
+                //write the projectile below and erase the projectile below
+                //else write a space
+                if (world[y][x] == enemyLaser && (world[y+1][x] != enemy 
+                & world[y+1][x] != enemyShielded)){
+                    world[y+1][x] = enemyLaser;
+                    world[y][x] = ' ';
                 }
-                else if (i%2 == 0 && world[y][x] == enemyLaser
-                && (world[y+1][x] == enemy | world[y+1][x] == enemyShielded)){
+                //else projectile is erased
+                else if (world[y][x] == enemyLaser && (world[y+1][x] == enemy 
+                | world[y+1][x] == enemyShielded)){
                     world[y][x] = ' ';
                 }
             }
         }
+        //handling if enemy is ready
         for (x = 0; x < sizex; x ++) {
             for (y = 0; y < sizey; y ++) {
-                if ((i % 5) == 0 && (world[y][x] == enemyShielded
-                | world[y][x] == enemy) && (rand() % 15) > 13
+                //if there is an enemy or enemyShielded in the position and 
+                //there is no a playerLaser below the position of the projectile
+                if (
+                (world[y][x] == enemyShielded | world[y][x] == enemy) 
+                && (rand () % 11) > 9
                 && world[y+1][x] != playerLaser) {
                     for (yi = y+1; yi < sizey; yi ++) {
                         if (world[yi][x] == enemy
