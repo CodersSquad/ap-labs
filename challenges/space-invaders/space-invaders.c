@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <unistd.h>
 #include <pthread.h>
-#include <windows.h>
-#include <time.h> //time()
 
 int DEBUG = 0;
 int RUNNING;
+
 int score = 0;
 int lives = 10;
 int enemies = 0;
+
 int playerX = 17;
 int board[31][12];
 
@@ -22,14 +21,18 @@ void *enemyBulletThread(void *args);
 void *playerBulletThread(void *args);
 void *playerMonitor(void *args);
 
-int main(){
-                                             //Hice esto para dibujar el board por si sirve de algo :D y 
-    DEBUG = argc > 1? 1 : 0;                                        // y
+
+int main(int argc, char **argv)
+{
+    DEBUG = argc > 1? 1 : 0;
     RUNNING = 1;
-    printf("How many enemies do you want? ");    //preguntarle al usuario sobre cuantos enemigos quiere
+
+    printf("How many enemies do you want? ");
     scanf("%d", &enemies);
+
     pthread_t monitor;
     pthread_create(&monitor, NULL, playerMonitor, NULL);
+
     initBoard();
     while (RUNNING)
     {
@@ -48,14 +51,19 @@ int main(){
         }
     }
     
+
     return 0;
 }
+
+
 void initBoard()
 {
     for (int i = 0; i < 31; i++)
         for (int j = 0; j < 12; j++)
             board[i][j] = 0;
+
     int spawner = enemies;
+
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 31; j++)
             if (spawner > 0 && board[j][i] == 0)
@@ -66,8 +74,12 @@ void initBoard()
                 spawner--;
                 usleep(10000);
             }
+
+
     board[playerX - 1][11] = 1;
 }
+
+
 void drawBoard()
 {
     printf("\n\n|-------------------------------|\n");
@@ -80,6 +92,8 @@ void drawBoard()
     }
     printf("|-------------------------------|\n");
 }
+
+
 void drawUI(int debug)
 {
     system("clear");
@@ -109,25 +123,33 @@ void drawUI(int debug)
     printf("|-------------------------------|\n");
     if (debug)
         drawBoard();
-} 
+}
+
+
 void *enemyBehaviour(void *args)
 {
     float enemySpeed = 1.0;
+
     int *pos = (int *)args;
     int y = pos[1];
     int x = pos[0];
+
     int shoots = 3;
+
     board[x][y] = 2;
     while (y < 12)
     {
         int shoot = 0;
+
         if(shoots == 3){
             shoot = rand()%3;
             shoots = 0;
         }
         else
             shoots++;
+
         usleep(enemySpeed*1000000);
+
         if(board[x][y] != 2){
             score++;
             enemies--;
@@ -143,7 +165,9 @@ void *enemyBehaviour(void *args)
             board[x][y++] = 0;
             board[x][y] = 2;
         }
+
         
+
         if(shoot == 2 && y<11){
             pthread_t bullet;
             int bulletPos[2] = {x, y};
@@ -154,10 +178,14 @@ void *enemyBehaviour(void *args)
     board[x][y] = 0;
     pthread_exit(NULL);
 }
+
+
 void *enemyBulletThread(void *args)
 {
     int actual, next;
+
     float bulletSpeed = 0.5;
+
     int *pos = (int *)args;
     int y = pos[1] + 1;
     int x = pos[0];
@@ -168,6 +196,7 @@ void *enemyBulletThread(void *args)
         usleep(bulletSpeed*1000000);
         actual = board[x][y];
         next = board[x][y+1];
+
         if(next == 0){
             board[x][y+1] = 3;
         } else if(next == 1){
@@ -175,30 +204,39 @@ void *enemyBulletThread(void *args)
             if(lives == 0)
                 board[x][y+1] = 0;
         } 
+
         if(actual == 3)
             board[x][y] = 0;
+
         
         if(next!=3){
             y++;
         }
     }
+
     usleep(bulletSpeed*1000000);
     if(next == 0){
         board[x][y] = 0;
     }
+
     pthread_exit(NULL);
 }
+
+
 void *playerBulletThread(void *args)
 {
     float bulletSpeed = 0.25;
+
     int y = 10;
     int x = *(int *)args;
+
     while (y > -1)
     {  
         if (board[x][y] != 2)
         {
             board[x][y] = 4;
             usleep(bulletSpeed*1000000);
+
             if (board[x][y] == 2){
                 score++;
                 enemies--;
@@ -212,8 +250,11 @@ void *playerBulletThread(void *args)
         }
         
     }
+
     pthread_exit(NULL);
 }
+
+
 void *playerMonitor(void *args)
 {
     while (RUNNING)
